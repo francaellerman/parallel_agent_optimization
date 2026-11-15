@@ -1,0 +1,14 @@
+{
+  "name": "A",
+  "description": "Refactor a module: plan, implement, fix tests.",
+  "blocks": [
+    {"type": "human", "seconds": 9.0, "note": "User writes initial task description"},
+    {"type": "agent", "tokens": 450, "note": "Agent explores codebase and proposes a plan"},
+    {"type": "human", "seconds": 12.0, "note": "User reviews plan and requests changes"},
+    {"type": "agent", "tokens": 1800, "note": "Agent implements the refactor"},
+    {"type": "human", "seconds": 14.0, "note": "User reads the diff"},
+    {"type": "agent", "tokens": 600, "note": "Agent fixes failing tests"},
+    {"type": "human", "seconds": 6.0, "note": "User approves and asks for a commit"},
+    {"type": "agent", "tokens": 120, "note": "Agent writes commit message and commits"}
+  ]
+}
