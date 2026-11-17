@@ -1,0 +1,75 @@
+{
+  "dataset": "SALT-NLP/SWE-chat",
+  "dataset_url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat",
+  "license": "odc-by",
+  "attributed_user": "Soph",
+  "selection": "Convenience sample of overlapping main sessions attributed to the same developer; selected before inspecting speed-sweep outcomes. Full transcripts retained. Attribution is not independent verification of one human or task independence.",
+  "sources": [
+    {
+      "session_id": "ea1c8041-5321-4da8-9eab-ff4628dbb037",
+      "user_id": "Soph",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts/ea1c8041-5321-4da8-9eab-ff4628dbb037.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts/ea1c8041-5321-4da8-9eab-ff4628dbb037.jsonl"
+    },
+    {
+      "session_id": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6",
+      "user_id": "Soph",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts1/4bf4b198-080d-4b2f-8194-6aa0cc10dad6.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts1/4bf4b198-080d-4b2f-8194-6aa0cc10dad6.jsonl"
+    }
+  ],
+  "verification": {
+    "shared_event_uuids": 0,
+    "agent_overlap_seconds": 1799.884,
+    "agent_overlap_intervals": [
+      {
+        "start": "2026-08-14T12:29:26.679000+00:00",
+        "end": "2026-08-14T12:39:08.236000+00:00",
+        "seconds": 581.557
+      },
+      {
+        "start": "2026-08-14T12:44:53.913000+00:00",
+        "end": "2026-08-14T12:45:49.955000+00:00",
+        "seconds": 56.042
+      },
+      {
+        "start": "2026-08-14T12:51:08.419000+00:00",
+        "end": "2026-08-14T13:01:27.564000+00:00",
+        "seconds": 619.145
+      },
+      {
+        "start": "2026-08-14T13:47:18.290000+00:00",
+        "end": "2026-08-14T13:54:51.517000+00:00",
+        "seconds": 453.227
+      },
+      {
+        "start": "2026-08-14T14:18:25.932000+00:00",
+        "end": "2026-08-14T14:19:55.845000+00:00",
+        "seconds": 89.913
+      }
+    ],
+    "files": [
+      {
+        "filename": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6.jsonl",
+        "sha256": "b51dc476260e93861104bbf688a67b5590959ed919df76c13bf3937f31367276",
+        "session_id": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6",
+        "start": "2026-08-14T10:29:12.521Z",
+        "end": "2026-08-14T14:27:23.098Z",
+        "human_prompts": 10,
+        "warnings": []
+      },
+      {
+        "filename": "ea1c8041-5321-4da8-9eab-ff4628dbb037.jsonl",
+        "sha256": "7bfdc51ae3b5cf6e6f6abb2387cb7241be7bade077b1a7ec42e09f2633a3a6dd",
+        "session_id": "ea1c8041-5321-4da8-9eab-ff4628dbb037",
+        "start": "2026-08-14T12:29:26.679Z",
+        "end": "2026-08-14T14:19:55.845Z",
+        "human_prompts": 3,
+        "warnings": []
+      }
+    ]
+  },
+  "task_independence": "Initial requests are distinct; full task independence and one-human operation are not independently verified."
+}

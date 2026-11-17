@@ -1,0 +1,78 @@
+{
+  "label": "Original pair",
+  "dataset": "SALT-NLP/SWE-chat",
+  "attributed_user_id": "pjbgf",
+  "identity_note": "Dataset commit-author attribution; not independently verified human identity.",
+  "selection": "Previously selected overlapping main-agent sessions; full recordings retained, including overnight gaps.",
+  "sources": [
+    {
+      "session_id": "2bc49e0c-2217-4d12-8f74-4e9951044a9c",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts/2bc49e0c-2217-4d12-8f74-4e9951044a9c.jsonl"
+    },
+    {
+      "session_id": "b6331150-ad33-4922-858c-405394d686ba",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts1/b6331150-ad33-4922-858c-405394d686ba.jsonl"
+    }
+  ],
+  "verification": {
+    "shared_event_uuids": 0,
+    "agent_overlap_seconds": 958.5409999999999,
+    "agent_overlap_intervals": [
+      {
+        "start": "2026-09-03T22:59:51.979000+00:00",
+        "end": "2026-09-03T23:02:45.716000+00:00",
+        "seconds": 173.737
+      },
+      {
+        "start": "2026-09-03T23:03:24.286000+00:00",
+        "end": "2026-09-03T23:04:55.129000+00:00",
+        "seconds": 90.843
+      },
+      {
+        "start": "2026-09-04T09:30:16.734000+00:00",
+        "end": "2026-09-04T09:32:46.505000+00:00",
+        "seconds": 149.771
+      },
+      {
+        "start": "2026-09-04T09:55:11.690000+00:00",
+        "end": "2026-09-04T10:02:44.157000+00:00",
+        "seconds": 452.467
+      },
+      {
+        "start": "2026-09-04T10:07:00.634000+00:00",
+        "end": "2026-09-04T10:08:03.770000+00:00",
+        "seconds": 63.136
+      },
+      {
+        "start": "2026-09-04T10:11:07.342000+00:00",
+        "end": "2026-09-04T10:11:35.929000+00:00",
+        "seconds": 28.587
+      }
+    ],
+    "files": [
+      {
+        "filename": "2bc49e0c-2217-4d12-8f74-4e9951044a9c.jsonl",
+        "sha256": "6c759a50feae57a6eceecbe6259097a84f2b90ed529e858d74d7946370e04785",
+        "session_id": "2bc49e0c-2217-4d12-8f74-4e9951044a9c",
+        "start": "2026-09-03T22:47:37.481Z",
+        "end": "2026-09-04T10:44:32.497Z",
+        "human_prompts": 11,
+        "warnings": [
+          "Agent block 1: interrupted",
+          "Agent block 3: interrupted",
+          "Agent block 7: interrupted"
+        ]
+      },
+      {
+        "filename": "b6331150-ad33-4922-858c-405394d686ba.jsonl",
+        "sha256": "52f93073dde8e853d7e00b690d2165035c368f4b9e485ec958329362b5c9c04e",
+        "session_id": "b6331150-ad33-4922-858c-405394d686ba",
+        "start": "2026-09-03T22:58:23.000Z",
+        "end": "2026-09-04T10:11:42.595Z",
+        "human_prompts": 10,
+        "warnings": []
+      }
+    ]
+  },
+  "task_independence": "Initial requests are distinct; full task independence and one-human operation are not independently verified."
+}
