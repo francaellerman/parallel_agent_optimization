@@ -1,0 +1,3594 @@
+{
+ "schema": "aidev-trace-1",
+ "dataset": "hao-li/AIDev v5 (AIDev-pop)",
+ "repo": "benbalter/benbalter.github.com",
+ "driver": "benbalter",
+ "day": "2025-12-09",
+ "definitions": {
+  "run": "copilot_work_started -> copilot_work_finished[_failure] or close, capped at 60 min",
+  "wait": "finish -> the driver's next response on the PR (their comment or review, the next run, merge/close), capped at 168 h"
+ },
+ "prs": [
+  {
+   "pr_id": 3707950296,
+   "number": 1093,
+   "title": "Add TL;DR tooltip component to Astro blog posts with lightweight custom implementation and markdown support",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1093",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:04:33Z",
+   "runs": [
+    [
+     "2025-12-08T20:43:58Z",
+     "2025-12-08T21:05:12Z"
+    ],
+    [
+     "2025-12-08T21:05:32Z",
+     "2025-12-08T21:18:22Z"
+    ],
+    [
+     "2025-12-08T21:19:20Z",
+     "2025-12-08T21:23:22Z"
+    ],
+    [
+     "2025-12-08T22:11:56Z",
+     "2025-12-08T22:15:57Z"
+    ],
+    [
+     "2025-12-08T23:57:59Z",
+     "2025-12-09T00:08:03Z"
+    ],
+    [
+     "2025-12-09T00:52:58Z",
+     "2025-12-09T01:01:25Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-08T21:05:12Z",
+     "2025-12-08T21:05:32Z"
+    ],
+    [
+     "2025-12-08T21:18:22Z",
+     "2025-12-08T21:19:20Z"
+    ],
+    [
+     "2025-12-08T21:23:22Z",
+     "2025-12-08T22:11:30Z"
+    ],
+    [
+     "2025-12-08T22:15:57Z",
+     "2025-12-08T23:14:12Z"
+    ],
+    [
+     "2025-12-09T00:08:03Z",
+     "2025-12-09T00:52:33Z"
+    ],
+    [
+     "2025-12-09T01:01:25Z",
+     "2025-12-09T01:04:33Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-08T21:00:51Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot can you implement the tooltip JS locally without requiring the entire bootstrap JS library?"
+    },
+    {
+     "t": "2025-12-08T21:14:21Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-08T21:14:22Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-08T21:17:41Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-08T22:11:30Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-08T23:14:12Z",
+     "event": "reviewed:approved",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-08T23:57:28Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T00:52:33Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T01:04:33Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:04:33Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708401468,
+   "number": 1121,
+   "title": "Add E2E test for dark mode and fix accessibility using Bootstrap CSS variables",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1121",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:04:12Z",
+   "runs": [
+    [
+     "2025-12-08T23:18:45Z",
+     "2025-12-08T23:30:25Z"
+    ],
+    [
+     "2025-12-08T23:40:08Z",
+     "2025-12-08T23:56:31Z"
+    ],
+    [
+     "2025-12-08T23:56:51Z",
+     "2025-12-09T00:04:24Z"
+    ],
+    [
+     "2025-12-09T00:06:30Z",
+     "2025-12-09T00:18:23Z"
+    ],
+    [
+     "2025-12-09T00:51:45Z",
+     "2025-12-09T01:03:43Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-08T23:30:25Z",
+     "2025-12-08T23:39:38Z"
+    ],
+    [
+     "2025-12-08T23:56:31Z",
+     "2025-12-08T23:56:51Z"
+    ],
+    [
+     "2025-12-09T00:04:24Z",
+     "2025-12-09T00:06:05Z"
+    ],
+    [
+     "2025-12-09T00:18:23Z",
+     "2025-12-09T00:51:20Z"
+    ],
+    [
+     "2025-12-09T01:03:43Z",
+     "2025-12-09T01:04:12Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-08T23:39:38Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-08T23:39:39Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-08T23:39:59Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot check post body text contrast"
+    },
+    {
+     "t": "2025-12-08T23:54:35Z",
+     "event": "reviewed:commented",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:06:05Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix the accessibility issue to use Bootstrap's native light/dark themes"
+    },
+    {
+     "t": "2025-12-09T00:51:20Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T01:04:12Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:04:12Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708471158,
+   "number": 1125,
+   "title": "Honor `archived: true` front matter in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1125",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:04:25Z",
+   "runs": [
+    [
+     "2025-12-08T23:44:35Z",
+     "2025-12-09T00:00:09Z"
+    ],
+    [
+     "2025-12-09T00:05:39Z",
+     "2025-12-09T00:11:52Z"
+    ],
+    [
+     "2025-12-09T00:12:12Z",
+     "2025-12-09T00:19:41Z"
+    ],
+    [
+     "2025-12-09T00:53:22Z",
+     "2025-12-09T01:01:10Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T00:00:09Z",
+     "2025-12-09T00:05:13Z"
+    ],
+    [
+     "2025-12-09T00:11:52Z",
+     "2025-12-09T00:12:12Z"
+    ],
+    [
+     "2025-12-09T00:19:41Z",
+     "2025-12-09T00:52:53Z"
+    ],
+    [
+     "2025-12-09T01:01:10Z",
+     "2025-12-09T01:04:25Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T00:05:13Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot warning banner should be a component"
+    },
+    {
+     "t": "2025-12-09T00:05:19Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T00:05:22Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:05:23Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:52:53Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T01:04:25Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:04:25Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708471473,
+   "number": 1126,
+   "title": "Add emoji rendering support to Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1126",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T00:50:07Z",
+   "runs": [
+    [
+     "2025-12-08T23:44:51Z",
+     "2025-12-09T00:00:31Z"
+    ],
+    [
+     "2025-12-09T00:04:53Z",
+     "2025-12-09T00:17:37Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T00:00:31Z",
+     "2025-12-09T00:04:28Z"
+    ],
+    [
+     "2025-12-09T00:17:37Z",
+     "2025-12-09T00:50:07Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T00:04:28Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:04:28Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:04:40Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T00:50:07Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:50:07Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708471969,
+   "number": 1127,
+   "title": "Replicate Jekyll plugin functionality in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1127",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:43:08Z",
+   "runs": [
+    [
+     "2025-12-08T23:45:04Z",
+     "2025-12-09T00:07:15Z"
+    ],
+    [
+     "2025-12-09T00:54:08Z",
+     "2025-12-09T01:03:10Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T00:07:15Z",
+     "2025-12-09T00:53:46Z"
+    ],
+    [
+     "2025-12-09T01:03:10Z",
+     "2025-12-09T01:43:08Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T00:53:46Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T01:43:08Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708472570,
+   "number": 1128,
+   "title": "Suppress Sass @import deprecation warnings in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1128",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T00:50:29Z",
+   "runs": [
+    [
+     "2025-12-08T23:45:24Z",
+     "2025-12-09T00:04:06Z"
+    ],
+    [
+     "2025-12-09T00:04:42Z",
+     "2025-12-09T00:50:29Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T00:04:06Z",
+     "2025-12-09T00:04:18Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T00:04:18Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:04:19Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:50:29Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T00:50:29Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708646723,
+   "number": 1134,
+   "title": "Replace img elements with Astro Image components",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1134",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:08:43Z",
+   "runs": [
+    [
+     "2025-12-09T00:54:39Z",
+     "2025-12-09T01:09:54Z"
+    ],
+    [
+     "2025-12-09T01:11:43Z",
+     "2025-12-09T01:55:35Z"
+    ],
+    [
+     "2025-12-09T03:01:21Z",
+     "2025-12-09T03:08:28Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:09:54Z",
+     "2025-12-09T01:11:15Z"
+    ],
+    [
+     "2025-12-09T01:55:35Z",
+     "2025-12-09T03:00:53Z"
+    ],
+    [
+     "2025-12-09T03:08:28Z",
+     "2025-12-09T03:08:43Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:11:15Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:11:16Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:43:49Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T03:00:53Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T03:08:43Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:08:43Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708647956,
+   "number": 1135,
+   "title": "Add dynamic post list rendering to match Jekyll functionality in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1135",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:09:08Z",
+   "runs": [
+    [
+     "2025-12-09T00:55:49Z",
+     "2025-12-09T01:14:39Z"
+    ],
+    [
+     "2025-12-09T01:41:00Z",
+     "2025-12-09T01:55:34Z"
+    ],
+    [
+     "2025-12-09T03:01:59Z",
+     "2025-12-09T03:06:34Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:14:39Z",
+     "2025-12-09T01:40:29Z"
+    ],
+    [
+     "2025-12-09T01:55:34Z",
+     "2025-12-09T03:01:33Z"
+    ],
+    [
+     "2025-12-09T03:06:34Z",
+     "2025-12-09T03:09:08Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:40:29Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:40:30Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:50:39Z",
+     "event": "reviewed:commented",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:01:33Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T03:09:08Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:09:08Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708651436,
+   "number": 1137,
+   "title": "Implement resume page in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1137",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:34:54Z",
+   "runs": [
+    [
+     "2025-12-09T00:56:26Z",
+     "2025-12-09T01:14:56Z"
+    ],
+    [
+     "2025-12-09T01:41:36Z",
+     "2025-12-09T01:55:36Z"
+    ],
+    [
+     "2025-12-09T03:00:30Z",
+     "2025-12-09T03:09:45Z"
+    ],
+    [
+     "2025-12-09T03:23:05Z",
+     "2025-12-09T03:33:25Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:14:56Z",
+     "2025-12-09T01:41:04Z"
+    ],
+    [
+     "2025-12-09T01:55:36Z",
+     "2025-12-09T03:00:05Z"
+    ],
+    [
+     "2025-12-09T03:09:45Z",
+     "2025-12-09T03:12:11Z"
+    ],
+    [
+     "2025-12-09T03:33:25Z",
+     "2025-12-09T03:34:54Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:41:04Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:41:05Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:52:13Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T03:00:05Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T03:12:11Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot use the same markdown rendering as other pages"
+    },
+    {
+     "t": "2025-12-09T03:34:54Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:34:54Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708654335,
+   "number": 1139,
+   "title": "Hide anchor links until hover in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1139",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:52:23Z",
+   "runs": [
+    [
+     "2025-12-09T00:58:34Z",
+     "2025-12-09T01:15:32Z"
+    ],
+    [
+     "2025-12-09T01:41:43Z",
+     "2025-12-09T01:52:23Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:15:32Z",
+     "2025-12-09T01:41:15Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:41:15Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:41:16Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:52:23Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:52:23Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708655459,
+   "number": 1141,
+   "title": "[WIP] Fix TLDR tooltips in Astro not working properly",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1141",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T00:59:17Z",
+   "runs": [
+    [
+     "2025-12-09T00:59:05Z",
+     "2025-12-09T00:59:17Z"
+    ]
+   ],
+   "waits": [],
+   "responses": [
+    {
+     "t": "2025-12-09T00:59:17Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708668637,
+   "number": 1143,
+   "title": "Replicate Jekyll plugin functionality in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1143",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:52:47Z",
+   "runs": [
+    [
+     "2025-12-09T01:05:29Z",
+     "2025-12-09T01:27:19Z"
+    ],
+    [
+     "2025-12-09T01:42:32Z",
+     "2025-12-09T01:52:47Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:27:19Z",
+     "2025-12-09T01:42:03Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:42:03Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:42:04Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:52:47Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:52:47Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708682756,
+   "number": 1147,
+   "title": "Fix dark mode support in Astro components",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1147",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T01:53:04Z",
+   "runs": [
+    [
+     "2025-12-09T01:13:15Z",
+     "2025-12-09T01:25:51Z"
+    ],
+    [
+     "2025-12-09T01:43:17Z",
+     "2025-12-09T01:53:04Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:25:51Z",
+     "2025-12-09T01:42:54Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T01:42:54Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:42:54Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:53:04Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T01:53:04Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708742930,
+   "number": 1150,
+   "title": "Improve SEO of Astro site with JSON-LD using schema-dts",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1150",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:47:46Z",
+   "runs": [
+    [
+     "2025-12-09T01:44:44Z",
+     "2025-12-09T01:56:08Z"
+    ],
+    [
+     "2025-12-09T03:04:23Z",
+     "2025-12-09T03:14:56Z"
+    ],
+    [
+     "2025-12-09T03:15:22Z",
+     "2025-12-09T03:46:28Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:56:08Z",
+     "2025-12-09T03:04:01Z"
+    ],
+    [
+     "2025-12-09T03:14:56Z",
+     "2025-12-09T03:15:22Z"
+    ],
+    [
+     "2025-12-09T03:46:28Z",
+     "2025-12-09T03:47:46Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:04:01Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working. Use open source JSON LD library"
+    },
+    {
+     "t": "2025-12-09T03:14:53Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:14:54Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:37:44Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T03:47:46Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:47:46Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708743921,
+   "number": 1151,
+   "title": "Improve typography of Astro site using web best practices",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1151",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T04:50:15Z",
+   "runs": [
+    [
+     "2025-12-09T01:45:14Z",
+     "2025-12-09T01:55:45Z"
+    ],
+    [
+     "2025-12-09T03:02:28Z",
+     "2025-12-09T03:10:53Z"
+    ],
+    [
+     "2025-12-09T03:18:33Z",
+     "2025-12-09T03:49:58Z"
+    ],
+    [
+     "2025-12-09T04:46:31Z",
+     "2025-12-09T04:50:15Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:55:45Z",
+     "2025-12-09T03:02:01Z"
+    ],
+    [
+     "2025-12-09T03:10:53Z",
+     "2025-12-09T03:18:03Z"
+    ],
+    [
+     "2025-12-09T03:49:58Z",
+     "2025-12-09T04:46:08Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:02:01Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T03:18:03Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:18:04Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:38:29Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T04:46:08Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T04:50:15Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:50:15Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708745252,
+   "number": 1152,
+   "title": "Remove gap and rounded corners between hero image and navbar",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1152",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:21:41Z",
+   "runs": [
+    [
+     "2025-12-09T01:45:53Z",
+     "2025-12-09T02:00:19Z"
+    ],
+    [
+     "2025-12-09T03:06:39Z",
+     "2025-12-09T03:14:00Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T02:00:19Z",
+     "2025-12-09T03:06:16Z"
+    ],
+    [
+     "2025-12-09T03:14:00Z",
+     "2025-12-09T03:21:41Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:06:16Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot i still see rounded top corners in the after photo"
+    },
+    {
+     "t": "2025-12-09T03:12:48Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:12:49Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:21:41Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:21:41Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708745721,
+   "number": 1153,
+   "title": "[WIP] Align post titles and publication dates with nav edges in astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1153",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:38:59Z",
+   "runs": [
+    [
+     "2025-12-09T01:46:20Z",
+     "2025-12-09T01:55:38Z"
+    ],
+    [
+     "2025-12-09T03:03:23Z",
+     "2025-12-09T03:10:38Z"
+    ],
+    [
+     "2025-12-09T03:13:51Z",
+     "2025-12-09T03:30:22Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T01:55:38Z",
+     "2025-12-09T03:03:00Z"
+    ],
+    [
+     "2025-12-09T03:10:38Z",
+     "2025-12-09T03:13:21Z"
+    ],
+    [
+     "2025-12-09T03:30:22Z",
+     "2025-12-09T03:38:59Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:03:00Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T03:13:21Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:13:22Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:22:24Z",
+     "event": "reviewed:commented",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:38:59Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:38:59Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3708973338,
+   "number": 1154,
+   "title": "Implement OG image generation for Astro blog posts with best practices",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1154",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:20:41Z",
+   "runs": [
+    [
+     "2025-12-09T03:10:15Z",
+     "2025-12-09T03:32:42Z"
+    ],
+    [
+     "2025-12-09T03:42:45Z",
+     "2025-12-09T03:50:06Z"
+    ],
+    [
+     "2025-12-09T04:47:05Z",
+     "2025-12-09T04:55:51Z"
+    ],
+    [
+     "2025-12-09T05:08:12Z",
+     "2025-12-09T05:20:41Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T03:32:42Z",
+     "2025-12-09T03:42:18Z"
+    ],
+    [
+     "2025-12-09T03:50:06Z",
+     "2025-12-09T04:46:42Z"
+    ],
+    [
+     "2025-12-09T04:55:51Z",
+     "2025-12-09T05:07:47Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:42:18Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot improve OG image output with best practices including image."
+    },
+    {
+     "t": "2025-12-09T04:46:42Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T05:07:47Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:07:48Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:12:42Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T05:20:41Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:20:41Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709009383,
+   "number": 1156,
+   "title": "Add Astro dev server support to devcontainer",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1156",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T03:48:51Z",
+   "runs": [
+    [
+     "2025-12-09T03:24:14Z",
+     "2025-12-09T03:31:32Z"
+    ],
+    [
+     "2025-12-09T03:44:03Z",
+     "2025-12-09T03:48:51Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T03:31:32Z",
+     "2025-12-09T03:43:36Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:43:36Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:43:37Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:48:51Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:48:51Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709011773,
+   "number": 1158,
+   "title": "Make Playwright tests compatible with both Jekyll and Astro builds",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1158",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T04:41:32Z",
+   "runs": [
+    [
+     "2025-12-09T03:25:02Z",
+     "2025-12-09T03:48:17Z"
+    ],
+    [
+     "2025-12-09T03:49:36Z",
+     "2025-12-09T04:41:32Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T03:48:17Z",
+     "2025-12-09T03:49:10Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T03:49:10Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T03:49:11Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:41:32Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:41:32Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709066327,
+   "number": 1160,
+   "title": "Fix edit link format and target in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1160",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:21:05Z",
+   "runs": [
+    [
+     "2025-12-09T03:46:15Z",
+     "2025-12-09T03:50:04Z"
+    ],
+    [
+     "2025-12-09T04:47:30Z",
+     "2025-12-09T04:58:42Z"
+    ],
+    [
+     "2025-12-09T05:08:59Z",
+     "2025-12-09T05:21:05Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T03:50:04Z",
+     "2025-12-09T04:47:06Z"
+    ],
+    [
+     "2025-12-09T04:58:42Z",
+     "2025-12-09T05:08:30Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T04:47:06Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T05:08:30Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:08:30Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:21:05Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:21:05Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709067725,
+   "number": 1161,
+   "title": "Align footer contact links with contact page",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1161",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T04:47:33Z",
+   "runs": [
+    [
+     "2025-12-09T03:46:47Z",
+     "2025-12-09T04:01:11Z"
+    ],
+    [
+     "2025-12-09T04:09:53Z",
+     "2025-12-09T04:47:24Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T04:01:11Z",
+     "2025-12-09T04:09:21Z"
+    ],
+    [
+     "2025-12-09T04:47:24Z",
+     "2025-12-09T04:47:33Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T04:09:21Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:09:22Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:40:39Z",
+     "event": "reviewed:commented",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:47:33Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T04:47:33Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709070098,
+   "number": 1162,
+   "title": "Fix double TL;DR tooltips in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1162",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:21:34Z",
+   "runs": [
+    [
+     "2025-12-09T03:47:39Z",
+     "2025-12-09T03:54:25Z"
+    ],
+    [
+     "2025-12-09T04:48:18Z",
+     "2025-12-09T04:54:20Z"
+    ],
+    [
+     "2025-12-09T05:09:23Z",
+     "2025-12-09T05:21:34Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T03:54:25Z",
+     "2025-12-09T04:47:54Z"
+    ],
+    [
+     "2025-12-09T04:54:20Z",
+     "2025-12-09T05:08:54Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T04:47:54Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T05:08:54Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:08:55Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:21:34Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:21:34Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709205903,
+   "number": 1164,
+   "title": "Reduce vertical spacing in blog post layout",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1164",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:22:10Z",
+   "runs": [
+    [
+     "2025-12-09T04:49:08Z",
+     "2025-12-09T05:05:00Z"
+    ],
+    [
+     "2025-12-09T05:09:47Z",
+     "2025-12-09T05:22:10Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:05:00Z",
+     "2025-12-09T05:09:19Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T05:09:19Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:09:20Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:22:10Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:22:10Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709206845,
+   "number": 1165,
+   "title": "Implement Turbo Drive for Astro site",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1165",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:41:45Z",
+   "runs": [
+    [
+     "2025-12-09T04:49:43Z",
+     "2025-12-09T05:19:29Z"
+    ],
+    [
+     "2025-12-09T05:23:48Z",
+     "2025-12-09T05:36:04Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:19:29Z",
+     "2025-12-09T05:23:18Z"
+    ],
+    [
+     "2025-12-09T05:36:04Z",
+     "2025-12-09T05:41:45Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T05:23:18Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:23:19Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:28:24Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback. also, how does this interact with Astro’s bundling of JS and CSs?"
+    },
+    {
+     "t": "2025-12-09T05:41:45Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:41:45Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709207226,
+   "number": 1166,
+   "title": "Fix navbar rounded corners in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1166",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:22:39Z",
+   "runs": [
+    [
+     "2025-12-09T04:49:53Z",
+     "2025-12-09T05:01:06Z"
+    ],
+    [
+     "2025-12-09T05:10:46Z",
+     "2025-12-09T05:22:39Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:01:06Z",
+     "2025-12-09T05:10:03Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T05:10:03Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:10:04Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:22:39Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:22:39Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709249126,
+   "number": 1167,
+   "title": "Audit Astro site for missing Jekyll functionality",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1167",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:51:58Z",
+   "runs": [
+    [
+     "2025-12-09T05:11:45Z",
+     "2025-12-09T05:25:36Z"
+    ],
+    [
+     "2025-12-09T05:26:01Z",
+     "2025-12-09T05:38:21Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:25:36Z",
+     "2025-12-09T05:26:01Z"
+    ],
+    [
+     "2025-12-09T05:38:21Z",
+     "2025-12-09T05:51:58Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T05:24:38Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot remove press page, migrate 404 functionality"
+    },
+    {
+     "t": "2025-12-09T05:25:08Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot visual qa comparison"
+    },
+    {
+     "t": "2025-12-09T05:51:58Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709270010,
+   "number": 1169,
+   "title": "Add dark mode support for Astro syntax highlighting and callouts",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1169",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T17:41:05Z",
+   "runs": [
+    [
+     "2025-12-09T05:20:37Z",
+     "2025-12-09T05:38:37Z"
+    ],
+    [
+     "2025-12-09T05:44:55Z",
+     "2025-12-09T05:54:22Z"
+    ],
+    [
+     "2025-12-09T17:07:43Z",
+     "2025-12-09T17:17:53Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:38:37Z",
+     "2025-12-09T05:44:22Z"
+    ],
+    [
+     "2025-12-09T05:54:22Z",
+     "2025-12-09T17:07:02Z"
+    ],
+    [
+     "2025-12-09T17:17:53Z",
+     "2025-12-09T17:41:05Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T05:44:22Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:44:23Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T05:51:18Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T17:07:02Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T17:41:05Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:41:05Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709281178,
+   "number": 1170,
+   "title": "[WIP] Optimize Core Web Vitals and accessibility",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1170",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T05:50:05Z",
+   "runs": [
+    [
+     "2025-12-09T05:27:06Z",
+     "2025-12-09T05:50:06Z"
+    ]
+   ],
+   "waits": [],
+   "responses": [
+    {
+     "t": "2025-12-09T05:50:06Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709281905,
+   "number": 1171,
+   "title": "Complete final content and URL parity checks and big-bang cutover to Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1171",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-10T03:39:25Z",
+   "runs": [
+    [
+     "2025-12-09T05:26:43Z",
+     "2025-12-09T05:53:26Z"
+    ],
+    [
+     "2025-12-09T17:06:54Z",
+     "2025-12-09T17:16:30Z"
+    ],
+    [
+     "2025-12-09T17:40:15Z",
+     "2025-12-09T18:40:15Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:53:26Z",
+     "2025-12-09T17:06:27Z"
+    ],
+    [
+     "2025-12-09T17:16:30Z",
+     "2025-12-09T17:39:50Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T17:06:27Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T17:39:50Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:39:50Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-10T03:39:25Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709323691,
+   "number": 1175,
+   "title": "Migrate 404 behavior to Astro and suggest similar pages",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1175",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T18:26:36Z",
+   "runs": [
+    [
+     "2025-12-09T05:44:34Z",
+     "2025-12-09T05:51:48Z"
+    ],
+    [
+     "2025-12-09T17:07:14Z",
+     "2025-12-09T17:18:02Z"
+    ],
+    [
+     "2025-12-09T17:38:33Z",
+     "2025-12-09T18:12:13Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:51:48Z",
+     "2025-12-09T17:06:44Z"
+    ],
+    [
+     "2025-12-09T17:18:02Z",
+     "2025-12-09T17:38:02Z"
+    ],
+    [
+     "2025-12-09T18:12:13Z",
+     "2025-12-09T18:26:36Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T17:06:44Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T17:38:02Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:38:03Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:07Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T18:26:36Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:26:36Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709328735,
+   "number": 1177,
+   "title": "Fix body text responsiveness to dark mode in Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1177",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T17:46:18Z",
+   "runs": [
+    [
+     "2025-12-09T05:46:37Z",
+     "2025-12-09T05:51:59Z"
+    ],
+    [
+     "2025-12-09T17:07:03Z",
+     "2025-12-09T17:33:50Z"
+    ],
+    [
+     "2025-12-09T17:36:20Z",
+     "2025-12-09T17:46:18Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:51:59Z",
+     "2025-12-09T17:06:34Z"
+    ],
+    [
+     "2025-12-09T17:33:50Z",
+     "2025-12-09T17:35:49Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T17:06:34Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T17:35:49Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:35:49Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:18Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:18Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709329647,
+   "number": 1178,
+   "title": "Fix related posts list styling in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1178",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T17:46:33Z",
+   "runs": [
+    [
+     "2025-12-09T05:46:53Z",
+     "2025-12-09T06:08:18Z"
+    ],
+    [
+     "2025-12-09T06:10:28Z",
+     "2025-12-09T07:10:28Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T06:08:18Z",
+     "2025-12-09T06:10:01Z"
+    ],
+    [
+     "2025-12-09T17:26:34Z",
+     "2025-12-09T17:46:33Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T06:10:01Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T06:10:01Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:06:06Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T17:46:33Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:34Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709330254,
+   "number": 1179,
+   "title": "Remove 'opens in new window' text from Astro revision link",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1179",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T17:46:45Z",
+   "runs": [
+    [
+     "2025-12-09T05:47:08Z",
+     "2025-12-09T05:58:01Z"
+    ],
+    [
+     "2025-12-09T17:06:51Z",
+     "2025-12-09T17:12:04Z"
+    ],
+    [
+     "2025-12-09T17:41:57Z",
+     "2025-12-09T17:46:45Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T05:58:01Z",
+     "2025-12-09T17:06:20Z"
+    ],
+    [
+     "2025-12-09T17:12:04Z",
+     "2025-12-09T17:41:29Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T17:06:20Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2025-12-09T17:41:29Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:41:30Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:45Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:46:45Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3709337598,
+   "number": 1180,
+   "title": "Optimize Core Web Vitals and accessibility in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1180",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T18:26:53Z",
+   "runs": [
+    [
+     "2025-12-09T05:49:58Z",
+     "2025-12-09T06:22:09Z"
+    ],
+    [
+     "2025-12-09T17:06:29Z",
+     "2025-12-09T18:03:03Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T06:22:09Z",
+     "2025-12-09T17:05:46Z"
+    ],
+    [
+     "2025-12-09T18:03:03Z",
+     "2025-12-09T18:26:53Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T17:05:46Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:05:46Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T17:41:40Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T18:26:53Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:26:53Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712013678,
+   "number": 1186,
+   "title": "Remove front matter images from post visual output",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1186",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T18:27:04Z",
+   "runs": [
+    [
+     "2025-12-09T17:48:17Z",
+     "2025-12-09T18:08:40Z"
+    ],
+    [
+     "2025-12-09T18:23:51Z",
+     "2025-12-09T18:27:04Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:08:40Z",
+     "2025-12-09T18:23:23Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T18:23:23Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:23:24Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:27:04Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:27:04Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712014491,
+   "number": 1187,
+   "title": "Align navigation bar with page content using consistent grid structure",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1187",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:02:28Z",
+   "runs": [
+    [
+     "2025-12-09T17:48:31Z",
+     "2025-12-09T18:09:06Z"
+    ],
+    [
+     "2025-12-09T18:23:19Z",
+     "2025-12-09T19:02:42Z"
+    ],
+    [
+     "2025-12-09T19:06:55Z",
+     "2025-12-09T19:15:55Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:09:06Z",
+     "2025-12-09T18:22:55Z"
+    ],
+    [
+     "2025-12-09T19:02:42Z",
+     "2025-12-09T19:06:02Z"
+    ],
+    [
+     "2025-12-09T19:15:55Z",
+     "2025-12-09T20:02:28Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T18:22:55Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:22:55Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:27:21Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T19:06:02Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T20:02:28Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:02:28Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712015187,
+   "number": 1188,
+   "title": "Add touch/tap support and full accessibility to TLDR tooltip",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1188",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T19:08:19Z",
+   "runs": [
+    [
+     "2025-12-09T17:48:45Z",
+     "2025-12-09T18:19:18Z"
+    ],
+    [
+     "2025-12-09T18:22:27Z",
+     "2025-12-09T18:37:51Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:19:18Z",
+     "2025-12-09T18:22:01Z"
+    ],
+    [
+     "2025-12-09T18:37:51Z",
+     "2025-12-09T19:08:19Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T18:22:01Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:22:02Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:27:38Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T19:08:19Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:08:19Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712020438,
+   "number": 1190,
+   "title": "Fix dark mode text color on static pages",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1190",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T18:28:33Z",
+   "runs": [
+    [
+     "2025-12-09T17:50:25Z",
+     "2025-12-09T18:08:44Z"
+    ],
+    [
+     "2025-12-09T18:23:42Z",
+     "2025-12-09T18:28:33Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:08:44Z",
+     "2025-12-09T18:23:09Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T18:23:09Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:23:10Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:28:33Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:28:33Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712131831,
+   "number": 1191,
+   "title": "Fix footnotes to fill full container width in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1191",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:07:36Z",
+   "runs": [
+    [
+     "2025-12-09T18:24:51Z",
+     "2025-12-09T18:39:33Z"
+    ],
+    [
+     "2025-12-09T18:46:21Z",
+     "2025-12-09T19:12:51Z"
+    ],
+    [
+     "2025-12-09T20:03:30Z",
+     "2025-12-09T20:07:36Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:39:33Z",
+     "2025-12-09T18:45:51Z"
+    ],
+    [
+     "2025-12-09T19:12:51Z",
+     "2025-12-09T20:03:05Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T18:45:51Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T18:45:52Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:05:16Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T20:03:05Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T20:07:36Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:07:36Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712132986,
+   "number": 1193,
+   "title": "Implement Astro best practices: TypeScript strict mode, accessibility, and performance",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1193",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:02:46Z",
+   "runs": [
+    [
+     "2025-12-09T18:25:16Z",
+     "2025-12-09T18:49:37Z"
+    ],
+    [
+     "2025-12-09T19:05:24Z",
+     "2025-12-09T19:14:45Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T18:49:37Z",
+     "2025-12-09T19:04:53Z"
+    ],
+    [
+     "2025-12-09T19:14:45Z",
+     "2025-12-09T20:02:46Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T19:04:53Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:04:54Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:05:00Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2025-12-09T20:02:46Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:02:46Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712209872,
+   "number": 1199,
+   "title": "Rename misleading about.css to global.css in Astro build output",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1199",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:02:15Z",
+   "runs": [
+    [
+     "2025-12-09T18:46:47Z",
+     "2025-12-09T19:14:58Z"
+    ],
+    [
+     "2025-12-09T19:44:24Z",
+     "2025-12-09T20:02:15Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T19:14:58Z",
+     "2025-12-09T19:43:48Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T19:43:48Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:43:48Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:02:15Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:02:15Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712211293,
+   "number": 1200,
+   "title": "Convert hardcoded colors to Bootstrap theme variables for dark mode support",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1200",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:22:22Z",
+   "runs": [
+    [
+     "2025-12-09T18:47:15Z",
+     "2025-12-09T19:09:28Z"
+    ],
+    [
+     "2025-12-09T19:42:35Z",
+     "2025-12-09T20:09:03Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T19:09:28Z",
+     "2025-12-09T19:42:12Z"
+    ],
+    [
+     "2025-12-09T20:09:03Z",
+     "2025-12-09T20:22:22Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T19:42:12Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:42:13Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:01:57Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T20:22:22Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:22:23Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712278924,
+   "number": 1201,
+   "title": "Keep custom TF-IDF implementation - natural library too heavy",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1201",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T20:23:18Z",
+   "runs": [
+    [
+     "2025-12-09T19:08:21Z",
+     "2025-12-09T19:40:47Z"
+    ],
+    [
+     "2025-12-09T19:45:15Z",
+     "2025-12-09T20:12:37Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T19:40:47Z",
+     "2025-12-09T19:44:34Z"
+    ],
+    [
+     "2025-12-09T20:12:37Z",
+     "2025-12-09T20:23:18Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T19:44:34Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T19:44:35Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:01:47Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T20:23:18Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712452211,
+   "number": 1202,
+   "title": "Add comprehensive vitest tests for Astro utilities",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1202",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T21:09:23Z",
+   "runs": [
+    [
+     "2025-12-09T20:04:09Z",
+     "2025-12-09T20:15:42Z"
+    ],
+    [
+     "2025-12-09T20:24:02Z",
+     "2025-12-09T20:37:30Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T20:15:42Z",
+     "2025-12-09T20:23:35Z"
+    ],
+    [
+     "2025-12-09T20:37:30Z",
+     "2025-12-09T21:09:23Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T20:23:35Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:23:35Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:29:05Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T21:09:23Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:09:23Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712452533,
+   "number": 1203,
+   "title": "Fix failing Playwright tests on main by updating tests and CI workflow for Astro",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1203",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-01-22T02:15:14Z",
+   "runs": [
+    [
+     "2025-12-09T20:04:10Z",
+     "2025-12-09T20:59:36Z"
+    ],
+    [
+     "2025-12-09T21:09:09Z",
+     "2025-12-09T21:50:47Z"
+    ],
+    [
+     "2025-12-09T23:07:06Z",
+     "2025-12-10T00:06:14Z"
+    ],
+    [
+     "2025-12-10T05:41:02Z",
+     "2025-12-10T05:46:41Z"
+    ],
+    [
+     "2026-01-19T23:44:53Z",
+     "2026-01-19T23:49:35Z"
+    ],
+    [
+     "2026-01-20T00:15:57Z",
+     "2026-01-20T00:32:35Z"
+    ],
+    [
+     "2026-01-20T00:39:41Z",
+     "2026-01-20T00:43:39Z"
+    ],
+    [
+     "2026-01-22T01:09:50Z",
+     "2026-01-22T01:13:30Z"
+    ],
+    [
+     "2026-01-22T01:26:04Z",
+     "2026-01-22T01:29:50Z"
+    ],
+    [
+     "2026-01-22T01:30:21Z",
+     "2026-01-22T01:36:06Z"
+    ],
+    [
+     "2026-01-22T01:39:47Z",
+     "2026-01-22T01:45:37Z"
+    ],
+    [
+     "2026-01-22T01:58:30Z",
+     "2026-01-22T02:05:40Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T20:59:36Z",
+     "2025-12-09T21:08:42Z"
+    ],
+    [
+     "2025-12-09T21:50:47Z",
+     "2025-12-09T23:06:39Z"
+    ],
+    [
+     "2025-12-10T00:06:14Z",
+     "2025-12-10T05:40:37Z"
+    ],
+    [
+     "2025-12-10T05:46:41Z",
+     "2025-12-17T05:46:41Z"
+    ],
+    [
+     "2026-01-19T23:49:35Z",
+     "2026-01-20T00:15:29Z"
+    ],
+    [
+     "2026-01-20T00:32:35Z",
+     "2026-01-20T00:39:15Z"
+    ],
+    [
+     "2026-01-20T00:43:39Z",
+     "2026-01-20T00:58:45Z"
+    ],
+    [
+     "2026-01-22T01:13:30Z",
+     "2026-01-22T01:25:28Z"
+    ],
+    [
+     "2026-01-22T01:29:50Z",
+     "2026-01-22T01:30:21Z"
+    ],
+    [
+     "2026-01-22T01:36:06Z",
+     "2026-01-22T01:39:15Z"
+    ],
+    [
+     "2026-01-22T01:45:37Z",
+     "2026-01-22T01:57:59Z"
+    ],
+    [
+     "2026-01-22T02:05:40Z",
+     "2026-01-22T02:15:14Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T21:08:42Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:08:43Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:29:50Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot Let me get more context by examining the test files that are failing: Now let me look at the actual footer structure in the site to understand what elements are present: Based on my analysis of the job logs and the test files, I can now identify the root causes of the failures. The test fai"
+    },
+    {
+     "t": "2025-12-09T23:06:39Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix failing playwright tests"
+    },
+    {
+     "t": "2025-12-10T05:40:37Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2026-01-19T23:44:17Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2026-01-20T00:15:29Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix failing tests"
+    },
+    {
+     "t": "2026-01-20T00:39:15Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix failing tests"
+    },
+    {
+     "t": "2026-01-20T00:58:45Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot merge in `main` and resolve any conflicts."
+    },
+    {
+     "t": "2026-01-20T01:13:17Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot ## Problem Summary The GitHub Actions job named **\"Playwright E2E Tests\"** in `benbalter/benbalter.github.com` is failing with the following key log message: ``` Process completed with exit code 124. ``` - **Exit code 124** is typically a timeout in bash (e.g., from a `timeout` command). - "
+    },
+    {
+     "t": "2026-01-22T01:09:15Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot keep working"
+    },
+    {
+     "t": "2026-01-22T01:25:28Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot add cache to gitignore"
+    },
+    {
+     "t": "2026-01-22T01:26:27Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix failing tests"
+    },
+    {
+     "t": "2026-01-22T01:39:15Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot fix failing tests: 1. **Accessibility tests** (5 failures) - Various accessibility violations on homepage and mobile/tablet viewports 2. **Navigation/Dark mode tests** (8 failures) - Active link highlighting and syntax highlighting theme issues 3. **Link validation tests** (5 failures) - Br"
+    },
+    {
+     "t": "2026-01-22T01:57:59Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot skip failing tests in CI build"
+    },
+    {
+     "t": "2026-01-22T02:15:14Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2026-01-22T02:15:14Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712525541,
+   "number": 1210,
+   "title": "Fix tagline alignment in Astro navigation bar",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1210",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T21:38:57Z",
+   "runs": [
+    [
+     "2025-12-09T20:24:26Z",
+     "2025-12-09T20:39:26Z"
+    ],
+    [
+     "2025-12-09T20:53:07Z",
+     "2025-12-09T21:00:14Z"
+    ],
+    [
+     "2025-12-09T21:08:57Z",
+     "2025-12-09T21:31:54Z"
+    ],
+    [
+     "2025-12-09T21:31:55Z",
+     "2025-12-09T21:38:57Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T20:39:26Z",
+     "2025-12-09T20:52:36Z"
+    ],
+    [
+     "2025-12-09T21:00:14Z",
+     "2025-12-09T21:08:33Z"
+    ],
+    [
+     "2025-12-09T21:31:54Z",
+     "2025-12-09T21:31:55Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T20:52:36Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot tagline looks the same in the before and after"
+    },
+    {
+     "t": "2025-12-09T21:08:33Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot in both the before and after photo, the tagline is in the center of the navbar on its own line."
+    },
+    {
+     "t": "2025-12-09T21:31:19Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:31:20Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:38:57Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:38:57Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712527088,
+   "number": 1211,
+   "title": "Fix anchor icon fade transition in Astro build",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1211",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T21:07:51Z",
+   "runs": [
+    [
+     "2025-12-09T20:24:55Z",
+     "2025-12-09T20:45:02Z"
+    ],
+    [
+     "2025-12-09T20:52:39Z",
+     "2025-12-09T21:07:51Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T20:45:02Z",
+     "2025-12-09T20:52:13Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T20:52:13Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T20:52:14Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:07:51Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:07:51Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712543358,
+   "number": 1212,
+   "title": "Implement astro-seo for centralized SEO metadata management",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1212",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T22:08:39Z",
+   "runs": [
+    [
+     "2025-12-09T20:29:11Z",
+     "2025-12-09T20:51:37Z"
+    ],
+    [
+     "2025-12-09T21:08:00Z",
+     "2025-12-09T21:51:54Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T20:51:37Z",
+     "2025-12-09T21:07:29Z"
+    ],
+    [
+     "2025-12-09T21:51:54Z",
+     "2025-12-09T22:08:39Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T21:07:29Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:07:30Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T21:19:36Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T22:08:39Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T22:08:39Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712759452,
+   "number": 1214,
+   "title": "Convert kramdown syntax to HTML/MDX in Astro posts",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1214",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:14:47Z",
+   "runs": [
+    [
+     "2025-12-09T21:44:31Z",
+     "2025-12-09T22:09:33Z"
+    ],
+    [
+     "2025-12-09T22:20:02Z",
+     "2025-12-09T23:12:37Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T22:09:33Z",
+     "2025-12-09T22:19:36Z"
+    ],
+    [
+     "2025-12-09T23:12:37Z",
+     "2025-12-09T23:14:47Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T22:19:36Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T22:19:37Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:02:21Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot implement code review feedback."
+    },
+    {
+     "t": "2025-12-09T23:14:47Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:14:47Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712759466,
+   "number": 1215,
+   "title": "Implement astro-favicons integration",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1215",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:15:09Z",
+   "runs": [
+    [
+     "2025-12-09T21:44:30Z",
+     "2025-12-09T22:00:54Z"
+    ],
+    [
+     "2025-12-09T22:08:28Z",
+     "2025-12-09T23:08:28Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T22:00:54Z",
+     "2025-12-09T22:08:00Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T22:08:00Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T22:08:01Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:15:09Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:15:09Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712955614,
+   "number": 1216,
+   "title": "Reduce font size, weight, and spacing of related posts links",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1216",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:35:01Z",
+   "runs": [
+    [
+     "2025-12-09T23:07:53Z",
+     "2025-12-09T23:19:43Z"
+    ],
+    [
+     "2025-12-09T23:23:32Z",
+     "2025-12-09T23:30:20Z"
+    ],
+    [
+     "2025-12-09T23:30:45Z",
+     "2025-12-09T23:35:01Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T23:19:43Z",
+     "2025-12-09T23:23:11Z"
+    ],
+    [
+     "2025-12-09T23:30:20Z",
+     "2025-12-09T23:30:45Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T23:23:11Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot also reduce spacing between LIs. Use Bootstrap classes as applicable."
+    },
+    {
+     "t": "2025-12-09T23:30:15Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:30:16Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:35:01Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:35:01Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712955924,
+   "number": 1217,
+   "title": "Maximize use of Bootstrap classes in Astro components",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1217",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:56:05Z",
+   "runs": [
+    [
+     "2025-12-09T23:08:05Z",
+     "2025-12-09T23:31:14Z"
+    ],
+    [
+     "2025-12-09T23:31:36Z",
+     "2025-12-09T23:46:53Z"
+    ],
+    [
+     "2025-12-09T23:49:00Z",
+     "2025-12-09T23:56:05Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T23:31:14Z",
+     "2025-12-09T23:31:36Z"
+    ],
+    [
+     "2025-12-09T23:46:53Z",
+     "2025-12-09T23:48:32Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T23:26:45Z",
+     "event": "commented",
+     "actor": "benbalter",
+     "text": "@copilot maximize use of Bootstrap classes."
+    },
+    {
+     "t": "2025-12-09T23:48:32Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:48:32Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:56:05Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:56:05Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712980124,
+   "number": 1218,
+   "title": "Complete Jekyll-Astro parity verification and cutover preparation",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1218",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:56:52Z",
+   "runs": [
+    [
+     "2025-12-09T23:20:03Z",
+     "2025-12-09T23:42:07Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T23:42:07Z",
+     "2025-12-09T23:56:52Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T23:56:52Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 3712993013,
+   "number": 1220,
+   "title": "Add missing Edit button to Astro blog post footer",
+   "url": "https://github.com/benbalter/benbalter.github.com/pull/1220",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2025-12-09T23:55:28Z",
+   "runs": [
+    [
+     "2025-12-09T23:27:52Z",
+     "2025-12-09T23:44:55Z"
+    ],
+    [
+     "2025-12-09T23:49:09Z",
+     "2025-12-09T23:55:28Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2025-12-09T23:44:55Z",
+     "2025-12-09T23:48:43Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2025-12-09T23:48:43Z",
+     "event": "ready_for_review",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:48:44Z",
+     "event": "review_requested",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:55:28Z",
+     "event": "closed",
+     "actor": "benbalter",
+     "text": ""
+    },
+    {
+     "t": "2025-12-09T23:55:28Z",
+     "event": "merged",
+     "actor": "benbalter",
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

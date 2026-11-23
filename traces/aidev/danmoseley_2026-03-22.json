@@ -1,0 +1,1650 @@
+{
+ "schema": "aidev-trace-1",
+ "dataset": "hao-li/AIDev v5 (AIDev-pop)",
+ "repo": "dotnet/runtime",
+ "driver": "danmoseley",
+ "day": "2026-03-22",
+ "definitions": {
+  "run": "copilot_work_started -> copilot_work_finished[_failure] or close, capped at 60 min",
+  "wait": "finish -> the driver's next response on the PR (their comment or review, the next run, merge/close), capped at 168 h"
+ },
+ "prs": [
+  {
+   "pr_id": 4114558612,
+   "number": 125906,
+   "title": "Fix CrlDiskCacheRecovers flakiness: increase timeout and add retries for transient network failures",
+   "url": "https://github.com/dotnet/runtime/pull/125906",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T18:38:38Z",
+   "runs": [
+    [
+     "2026-03-22T03:29:34Z",
+     "2026-03-22T03:39:22Z"
+    ],
+    [
+     "2026-03-22T05:21:16Z",
+     "2026-03-22T05:25:33Z"
+    ],
+    [
+     "2026-03-22T07:25:53Z",
+     "2026-03-22T08:25:53Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T03:39:22Z",
+     "2026-03-22T05:20:40Z"
+    ],
+    [
+     "2026-03-22T05:25:33Z",
+     "2026-03-22T05:38:45Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:20:40Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:21:09Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 address feedback"
+    },
+    {
+     "t": "2026-03-22T05:38:45Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:38:58Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:24:27Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:38:38Z",
+     "event": "closed",
+     "actor": "bartonjs",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114597381,
+   "number": 125907,
+   "title": "Fix flaky MainWindow tests by replacing notepad.exe with a deterministic RemoteExecutor helper",
+   "url": "https://github.com/dotnet/runtime/pull/125907",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-26T03:42:36Z",
+   "runs": [
+    [
+     "2026-03-22T03:44:00Z",
+     "2026-03-22T04:01:28Z"
+    ],
+    [
+     "2026-03-22T05:12:15Z",
+     "2026-03-22T06:12:15Z"
+    ],
+    [
+     "2026-03-22T10:24:09Z",
+     "2026-03-22T10:36:15Z"
+    ],
+    [
+     "2026-03-23T03:28:04Z",
+     "2026-03-23T03:32:52Z"
+    ],
+    [
+     "2026-03-25T14:06:44Z",
+     "2026-03-25T14:17:15Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:01:28Z",
+     "2026-03-22T05:10:56Z"
+    ],
+    [
+     "2026-03-22T07:28:30Z",
+     "2026-03-22T10:24:09Z"
+    ],
+    [
+     "2026-03-22T10:36:15Z",
+     "2026-03-23T03:27:55Z"
+    ],
+    [
+     "2026-03-23T03:32:52Z",
+     "2026-03-23T18:46:56Z"
+    ],
+    [
+     "2026-03-25T14:17:15Z",
+     "2026-03-26T03:42:25Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:10:56Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:11:01Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:11:03Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:47Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:22:59Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot address feedback"
+    },
+    {
+     "t": "2026-03-23T03:27:55Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 is all feedback adddressed if so resolve it"
+    },
+    {
+     "t": "2026-03-23T18:46:56Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": "Looks clean to me"
+    },
+    {
+     "t": "2026-03-23T18:47:11Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@adamsitnik mergeable?"
+    },
+    {
+     "t": "2026-03-26T03:42:25Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "/ba-g _cffi_backend' i already opened issue for"
+    },
+    {
+     "t": "2026-03-26T03:42:36Z",
+     "event": "merged",
+     "actor": "adamsitnik",
+     "text": ""
+    },
+    {
+     "t": "2026-03-26T03:42:36Z",
+     "event": "closed",
+     "actor": "adamsitnik",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114603669,
+   "number": 125908,
+   "title": "Fix intermittent NRE in ETW listener tests by using GUID overload of EnableProvider",
+   "url": "https://github.com/dotnet/runtime/pull/125908",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-27T21:49:27Z",
+   "runs": [
+    [
+     "2026-03-22T03:46:23Z",
+     "2026-03-22T03:51:18Z"
+    ],
+    [
+     "2026-03-22T05:15:06Z",
+     "2026-03-22T06:15:06Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T03:51:18Z",
+     "2026-03-22T05:13:24Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:13:24Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:13:29Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:13:32Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:41Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-26T20:41:18Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-27T21:49:27Z",
+     "event": "merged",
+     "actor": "noahfalk",
+     "text": ""
+    },
+    {
+     "t": "2026-03-27T21:49:27Z",
+     "event": "closed",
+     "actor": "noahfalk",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114624311,
+   "number": 125909,
+   "title": "Make TestKeyRing.CreateECDsa resilient to transient macOS OSStatus -50 failures",
+   "url": "https://github.com/dotnet/runtime/pull/125909",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T18:47:46Z",
+   "runs": [
+    [
+     "2026-03-22T03:54:26Z",
+     "2026-03-22T04:02:35Z"
+    ],
+    [
+     "2026-03-22T05:17:14Z",
+     "2026-03-22T05:22:22Z"
+    ],
+    [
+     "2026-03-22T05:35:52Z",
+     "2026-03-22T06:35:52Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:02:35Z",
+     "2026-03-22T05:17:08Z"
+    ],
+    [
+     "2026-03-22T05:22:22Z",
+     "2026-03-22T05:34:21Z"
+    ],
+    [
+     "2026-03-23T03:29:26Z",
+     "2026-03-23T03:53:50Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:17:08Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 why repeat `return ECDsa.Create(parametersLocalCopy);` outside the loop? why not use RetryHelper?"
+    },
+    {
+     "t": "2026-03-22T05:34:21Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:34:26Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:34:28Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:33Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:22:56Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:53:50Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:47:46Z",
+     "event": "closed",
+     "actor": "bartonjs",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:47:46Z",
+     "event": "merged",
+     "actor": "bartonjs",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114625532,
+   "number": 125910,
+   "title": "Fix intermittent SystemTrustCertificateWithCustomRootTrust CI failure",
+   "url": "https://github.com/dotnet/runtime/pull/125910",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T19:14:49Z",
+   "runs": [
+    [
+     "2026-03-22T03:54:53Z",
+     "2026-03-22T04:20:33Z"
+    ],
+    [
+     "2026-03-22T07:26:57Z",
+     "2026-03-22T08:26:57Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:20:33Z",
+     "2026-03-22T05:34:51Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:34:51Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@bartonjs I don't have expertise to review this. does it look reasonable?"
+    },
+    {
+     "t": "2026-03-22T05:34:57Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:24:55Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T19:14:49Z",
+     "event": "merged",
+     "actor": "bartonjs",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T19:14:49Z",
+     "event": "closed",
+     "actor": "bartonjs",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114684694,
+   "number": 125911,
+   "title": "Fix flaky NonPowerOfTwoKeySizeOaepRoundtrip test with retry on transient CryptographicException",
+   "url": "https://github.com/dotnet/runtime/pull/125911",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T00:45:56Z",
+   "runs": [
+    [
+     "2026-03-22T04:20:18Z",
+     "2026-03-22T04:27:01Z"
+    ],
+    [
+     "2026-03-22T05:17:14Z",
+     "2026-03-22T06:17:14Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:27:01Z",
+     "2026-03-22T05:16:18Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:16:18Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": "LGTM. RetryHelper is 5 tries by default, with backoffs, total no more than 1 sec sleeps."
+    },
+    {
+     "t": "2026-03-22T05:16:23Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:16:24Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:22Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T00:45:56Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T00:45:56Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114698320,
+   "number": 125912,
+   "title": "Disable EnsureEnvironmentExitDoesntHang on .NET Framework",
+   "url": "https://github.com/dotnet/runtime/pull/125912",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T03:00:21Z",
+   "runs": [
+    [
+     "2026-03-22T04:26:59Z",
+     "2026-03-22T04:33:23Z"
+    ],
+    [
+     "2026-03-22T05:12:58Z",
+     "2026-03-22T06:12:58Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:33:23Z",
+     "2026-03-22T05:11:29Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:11:29Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:11:38Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:11:40Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:16Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T17:57:56Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T20:29:03Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "``` Assert.True() Failure Expected: True Actual: False Stack trace at Microsoft.Extensions.Hosting.Internal.HostTests.<StartCanBeCancelled>d__13.MoveNext() in /_/src/libraries/Microsoft.Extensions.Hosting/tests/UnitTests/Internal/HostTests.cs:line 297 --- End of stack trace from previous location wh"
+    },
+    {
+     "t": "2026-03-23T00:48:19Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:00:05Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:00:21Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:00:21Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114713263,
+   "number": 125914,
+   "title": "Fix flaky MountVolume tests: replace fixed delays with polling loops",
+   "url": "https://github.com/dotnet/runtime/pull/125914",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-28T04:59:45Z",
+   "runs": [
+    [
+     "2026-03-22T04:32:19Z",
+     "2026-03-22T04:46:14Z"
+    ],
+    [
+     "2026-03-22T05:31:09Z",
+     "2026-03-22T05:34:43Z"
+    ],
+    [
+     "2026-03-22T05:44:10Z",
+     "2026-03-22T06:44:10Z"
+    ],
+    [
+     "2026-03-28T03:55:36Z",
+     "2026-03-28T04:01:58Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T04:46:14Z",
+     "2026-03-22T05:30:39Z"
+    ],
+    [
+     "2026-03-22T05:34:43Z",
+     "2026-03-22T05:43:13Z"
+    ],
+    [
+     "2026-03-23T03:30:07Z",
+     "2026-03-24T01:49:48Z"
+    ],
+    [
+     "2026-03-28T04:01:58Z",
+     "2026-03-28T04:55:49Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:30:39Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:31:02Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 address feedback"
+    },
+    {
+     "t": "2026-03-22T05:43:13Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:43:18Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:43:20Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:43:29Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:25:08Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot OK address feedback and resolve it"
+    },
+    {
+     "t": "2026-03-24T01:49:48Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-28T04:55:49Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "I can do a follow up for the remainder mentioned if we merge this."
+    },
+    {
+     "t": "2026-03-28T04:59:45Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-28T04:59:46Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-28T07:43:24Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot confused by your analysis above about what remains to be addressed more this is merged. It closed #125913. You mention #125295 and maybe issues not covered by that. What related problems do you believe are not fixed by this pr? I'd there another relevant PR already? What issues are they tra"
+    }
+   ]
+  },
+  {
+   "pr_id": 4114747361,
+   "number": 125915,
+   "title": "Fix flaky FileSystemWatcher_Directory_Delete_MultipleFilters due to Windows NTFS pending-delete race",
+   "url": "https://github.com/dotnet/runtime/pull/125915",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-04-02T16:38:58Z",
+   "runs": [
+    [
+     "2026-03-22T04:41:19Z",
+     "2026-03-22T05:10:27Z"
+    ],
+    [
+     "2026-03-22T05:39:40Z",
+     "2026-03-22T06:39:40Z"
+    ],
+    [
+     "2026-03-23T00:47:47Z",
+     "2026-03-23T01:10:59Z"
+    ],
+    [
+     "2026-04-01T07:26:20Z",
+     "2026-04-01T08:01:15Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T05:10:27Z",
+     "2026-03-22T05:37:47Z"
+    ],
+    [
+     "2026-03-22T07:45:18Z",
+     "2026-03-23T00:47:37Z"
+    ],
+    [
+     "2026-03-23T01:10:59Z",
+     "2026-03-23T18:21:59Z"
+    ],
+    [
+     "2026-04-01T08:01:15Z",
+     "2026-04-02T16:38:58Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:37:47Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:37:52Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:37:53Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:44:05Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:21:36Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot address feedback"
+    },
+    {
+     "t": "2026-03-23T00:47:37Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:21:59Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "/ba-g the TestNativeDigits failure was fixed in parallel and issue closed"
+    },
+    {
+     "t": "2026-03-24T16:16:24Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "Just needs a review signoff."
+    },
+    {
+     "t": "2026-04-01T07:26:10Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot resolve conflicts and feedback"
+    },
+    {
+     "t": "2026-04-02T16:38:58Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-04-02T16:38:58Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114809997,
+   "number": 125916,
+   "title": "Fix EPERM when killing sudo-launched createdump process in CollectCrashDumpWithCreateDump",
+   "url": "https://github.com/dotnet/runtime/pull/125916",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-25T01:35:41Z",
+   "runs": [
+    [
+     "2026-03-22T04:59:42Z",
+     "2026-03-22T05:04:44Z"
+    ],
+    [
+     "2026-03-22T05:12:50Z",
+     "2026-03-22T05:19:38Z"
+    ],
+    [
+     "2026-03-22T05:42:45Z",
+     "2026-03-22T05:47:45Z"
+    ],
+    [
+     "2026-03-22T07:21:06Z",
+     "2026-03-22T07:34:38Z"
+    ],
+    [
+     "2026-03-22T13:45:35Z",
+     "2026-03-22T13:50:24Z"
+    ],
+    [
+     "2026-03-22T13:56:11Z",
+     "2026-03-22T14:00:34Z"
+    ],
+    [
+     "2026-03-22T15:44:34Z",
+     "2026-03-22T15:50:18Z"
+    ],
+    [
+     "2026-03-22T15:58:35Z",
+     "2026-03-22T16:03:24Z"
+    ],
+    [
+     "2026-03-22T16:25:56Z",
+     "2026-03-22T16:31:50Z"
+    ],
+    [
+     "2026-03-22T17:37:03Z",
+     "2026-03-22T17:43:25Z"
+    ],
+    [
+     "2026-03-22T17:47:09Z",
+     "2026-03-22T17:52:31Z"
+    ],
+    [
+     "2026-03-22T17:52:37Z",
+     "2026-03-22T17:58:10Z"
+    ],
+    [
+     "2026-03-22T18:09:12Z",
+     "2026-03-22T18:14:13Z"
+    ],
+    [
+     "2026-03-22T18:14:20Z",
+     "2026-03-22T18:21:16Z"
+    ],
+    [
+     "2026-03-22T18:30:04Z",
+     "2026-03-22T18:35:21Z"
+    ],
+    [
+     "2026-03-22T18:37:06Z",
+     "2026-03-22T18:42:18Z"
+    ],
+    [
+     "2026-03-23T18:20:11Z",
+     "2026-03-23T18:26:44Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T05:04:44Z",
+     "2026-03-22T05:12:41Z"
+    ],
+    [
+     "2026-03-22T05:19:38Z",
+     "2026-03-22T05:25:56Z"
+    ],
+    [
+     "2026-03-22T05:47:45Z",
+     "2026-03-22T07:20:12Z"
+    ],
+    [
+     "2026-03-22T07:34:38Z",
+     "2026-03-22T13:45:27Z"
+    ],
+    [
+     "2026-03-22T13:50:24Z",
+     "2026-03-22T13:56:03Z"
+    ],
+    [
+     "2026-03-22T14:00:34Z",
+     "2026-03-22T15:44:04Z"
+    ],
+    [
+     "2026-03-22T15:50:18Z",
+     "2026-03-22T15:58:35Z"
+    ],
+    [
+     "2026-03-22T16:03:24Z",
+     "2026-03-22T16:25:46Z"
+    ],
+    [
+     "2026-03-22T16:31:50Z",
+     "2026-03-22T17:35:56Z"
+    ],
+    [
+     "2026-03-22T17:43:25Z",
+     "2026-03-22T17:47:09Z"
+    ],
+    [
+     "2026-03-22T17:52:31Z",
+     "2026-03-22T17:52:37Z"
+    ],
+    [
+     "2026-03-22T17:58:10Z",
+     "2026-03-22T18:09:12Z"
+    ],
+    [
+     "2026-03-22T18:14:13Z",
+     "2026-03-22T18:14:20Z"
+    ],
+    [
+     "2026-03-22T18:21:16Z",
+     "2026-03-22T18:30:04Z"
+    ],
+    [
+     "2026-03-22T18:35:21Z",
+     "2026-03-22T18:37:06Z"
+    ],
+    [
+     "2026-03-22T18:42:18Z",
+     "2026-03-23T18:20:00Z"
+    ],
+    [
+     "2026-03-23T18:26:44Z",
+     "2026-03-23T18:49:52Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:12:41Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 I don't want a PR to just remove the workaorund - it will just expose the problem again. I want you to remove the workaround locally, loop to try to get a repro. If you get a repro, investigate. Any fix, put in this PR."
+    },
+    {
+     "t": "2026-03-22T05:25:56Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:26:31Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:27:20Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:42:24Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T05:42:37Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 look at feedback"
+    },
+    {
+     "t": "2026-03-22T05:43:51Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:20:12Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:26:13Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot address feedback"
+    },
+    {
+     "t": "2026-03-22T13:45:27Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "Thanks that is an improvement. @Copilot please remove handling of child processes."
+    },
+    {
+     "t": "2026-03-22T13:56:03Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T15:44:04Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T15:44:14Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot look at feedback"
+    },
+    {
+     "t": "2026-03-22T16:02:10Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T16:25:46Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot more things to look at"
+    },
+    {
+     "t": "2026-03-22T17:35:56Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T17:36:01Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T17:36:03Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:20:00Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:49:52Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:50:05Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-25T01:35:41Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-25T01:35:41Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4114879735,
+   "number": 125917,
+   "title": "Fix ObjectToIdCache.RemoveAt() backward-shift deletion bug (fixes intermittent DCS_MyPersonSurrogate_Stress failure)",
+   "url": "https://github.com/dotnet/runtime/pull/125917",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": NaN,
+   "runs": [
+    [
+     "2026-03-22T05:18:51Z",
+     "2026-03-22T06:17:33Z"
+    ],
+    [
+     "2026-03-22T06:17:36Z",
+     "2026-03-22T06:46:20Z"
+    ],
+    [
+     "2026-03-22T06:56:15Z",
+     "2026-03-22T07:07:20Z"
+    ],
+    [
+     "2026-03-22T07:20:10Z",
+     "2026-03-22T08:20:10Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T06:17:33Z",
+     "2026-03-22T06:17:36Z"
+    ],
+    [
+     "2026-03-22T06:46:20Z",
+     "2026-03-22T06:56:08Z"
+    ],
+    [
+     "2026-03-22T07:07:20Z",
+     "2026-03-22T07:19:18Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T05:55:59Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 can you devise a test that might hit this more reliably? only if it's not overly artificial / coupled to this one fix."
+    },
+    {
+     "t": "2026-03-22T06:56:08Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot we don't want to add such a synthetic test that it needs reflection - if it's for a bug we're going to fix in this pr anyway. Please remove it (once you checked it passes with the fix) Did you test running the test (that was sometimes failing) in a loop with and without the fix to see wheth"
+    },
+    {
+     "t": "2026-03-22T07:19:18Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:27:29Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:28:30Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-28T14:54:57Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@mconnew are you the right person to look at this one? Trying to fix test failure noise"
+    },
+    {
+     "t": "2026-03-30T20:46:55Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-04-21T03:41:44Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@StephenMolloy can you sign off ?"
+    },
+    {
+     "t": "2026-04-21T19:08:51Z",
+     "event": "merged",
+     "actor": "StephenMolloy",
+     "text": ""
+    },
+    {
+     "t": "2026-04-21T19:08:51Z",
+     "event": "closed",
+     "actor": "StephenMolloy",
+     "text": ""
+    },
+    {
+     "t": "2026-04-21T21:15:34Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "thanks @StephenMolloy"
+    }
+   ]
+  },
+  {
+   "pr_id": 4115067209,
+   "number": 125918,
+   "title": "Fix flaky Linux process name tests by polling after Process.Start",
+   "url": "https://github.com/dotnet/runtime/pull/125918",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-26T14:23:35Z",
+   "runs": [
+    [
+     "2026-03-22T06:08:57Z",
+     "2026-03-22T06:57:38Z"
+    ],
+    [
+     "2026-03-22T07:00:42Z",
+     "2026-03-22T07:06:08Z"
+    ],
+    [
+     "2026-03-22T07:17:45Z",
+     "2026-03-22T07:24:11Z"
+    ],
+    [
+     "2026-03-23T00:47:10Z",
+     "2026-03-23T00:55:51Z"
+    ],
+    [
+     "2026-03-23T01:09:55Z",
+     "2026-03-23T01:18:14Z"
+    ],
+    [
+     "2026-03-24T05:59:56Z",
+     "2026-03-24T06:11:45Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T06:57:38Z",
+     "2026-03-22T07:00:34Z"
+    ],
+    [
+     "2026-03-22T07:06:08Z",
+     "2026-03-22T07:17:36Z"
+    ],
+    [
+     "2026-03-22T07:24:11Z",
+     "2026-03-22T07:26:56Z"
+    ],
+    [
+     "2026-03-23T00:55:51Z",
+     "2026-03-23T01:09:44Z"
+    ],
+    [
+     "2026-03-23T01:18:14Z",
+     "2026-03-23T03:26:24Z"
+    ],
+    [
+     "2026-03-24T06:11:45Z",
+     "2026-03-25T01:05:51Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T07:00:34Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot does this fix the race or just reduce the window?"
+    },
+    {
+     "t": "2026-03-22T07:00:46Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:01:10Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T07:17:36Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot would also adding a very brief sleep be prudent and significantly reduce window further?"
+    },
+    {
+     "t": "2026-03-22T07:26:56Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T23:08:29Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T00:47:04Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T01:09:44Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@copilot+claude-sonnet-4.6 address feedback"
+    },
+    {
+     "t": "2026-03-23T03:26:24Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:53:03Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "cc @lewing who did that PR mentioned. @tmds to make sure I understand, you're suggesting leave it as is, where there's a window where ProcessName might give the parent's name, and callers should sleep for a bit if they don't want that?"
+    },
+    {
+     "t": "2026-03-23T22:54:57Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "Sorry for the noise @lewing I have no idea where I got you from. It's tmds's"
+    },
+    {
+     "t": "2026-03-24T05:59:46Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot reverse what you have and just fix the tests instead by having a short sleep. Try to repro the issue yourself first, then add the sleep and try to repro again. If possible let's test for the expected value then loop say every 50ms for up to 1 sec until we get the expected value"
+    },
+    {
+     "t": "2026-03-25T01:05:51Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-26T14:23:20Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "/ba-g unrelated already tracked"
+    },
+    {
+     "t": "2026-03-26T14:23:35Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-26T14:23:36Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4116218785,
+   "number": 125925,
+   "title": "Fix CrlDiskCacheRecovers test flakiness: OuterLoop, longer timeout, retries",
+   "url": "https://github.com/dotnet/runtime/pull/125925",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-23T18:43:50Z",
+   "runs": [
+    [
+     "2026-03-22T14:38:46Z",
+     "2026-03-22T14:51:19Z"
+    ],
+    [
+     "2026-03-22T15:28:39Z",
+     "2026-03-22T16:28:39Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T14:51:19Z",
+     "2026-03-22T15:27:15Z"
+    ],
+    [
+     "2026-03-23T03:28:51Z",
+     "2026-03-23T18:29:03Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T15:27:15Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T15:27:22Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T15:27:24Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T15:27:54Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T23:07:31Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:24:12Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:29:03Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@rzikm oops, yes. I think this one is better -- more concise and idiomatic. Shall we go with this one?"
+    },
+    {
+     "t": "2026-03-23T18:43:50Z",
+     "event": "merged",
+     "actor": "bartonjs",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T18:43:50Z",
+     "event": "closed",
+     "actor": "bartonjs",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4116657433,
+   "number": 125928,
+   "title": "Shorten thread names exceeding the 15-char Linux pthread_setname_np limit",
+   "url": "https://github.com/dotnet/runtime/pull/125928",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-24T02:06:15Z",
+   "runs": [
+    [
+     "2026-03-22T17:55:42Z",
+     "2026-03-22T18:02:39Z"
+    ],
+    [
+     "2026-03-22T18:06:51Z",
+     "2026-03-22T18:11:25Z"
+    ],
+    [
+     "2026-03-22T20:08:17Z",
+     "2026-03-22T21:08:17Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T18:02:39Z",
+     "2026-03-22T18:06:51Z"
+    ],
+    [
+     "2026-03-22T18:11:25Z",
+     "2026-03-22T20:06:29Z"
+    ],
+    [
+     "2026-03-22T23:10:44Z",
+     "2026-03-22T23:12:30Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-22T20:06:29Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": "@hoyosjs can you confirm no debugger dependency concerns?"
+    },
+    {
+     "t": "2026-03-22T20:07:14Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "Past changes like this https://github.com/dotnet/runtime/pull/75113"
+    },
+    {
+     "t": "2026-03-22T20:07:17Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T20:07:18Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T20:07:18Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T20:07:18Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T23:06:19Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-22T23:12:30Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "I was curious what the synch manager is and apparently it's the PAL way of simulating Windows cross process synchronization primitives."
+    },
+    {
+     "t": "2026-03-24T02:06:15Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-24T02:06:15Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4116971746,
+   "number": 125930,
+   "title": "Fix OOM in BinHexDecoder, Base64Decoder, and XmlSchemaValidator when throwing on large invalid input",
+   "url": "https://github.com/dotnet/runtime/pull/125930",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-24T16:13:15Z",
+   "runs": [
+    [
+     "2026-03-22T20:00:29Z",
+     "2026-03-22T20:34:58Z"
+    ],
+    [
+     "2026-03-23T02:27:20Z",
+     "2026-03-23T03:27:20Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-22T20:34:58Z",
+     "2026-03-23T02:25:43Z"
+    ],
+    [
+     "2026-03-23T22:11:43Z",
+     "2026-03-24T16:13:05Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-23T02:25:43Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "> [!NOTE] > This comment was generated with Copilot assistance. I pushed an additional commit that audits and fixes all the places where these decoders' unbounded error messages can surface. The original two commits fix `BinHexDecoder.Decode` and `Base64Decoder.Decode` so they pass only the offendin"
+    },
+    {
+     "t": "2026-03-23T02:26:14Z",
+     "event": "reviewed:approved",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T02:26:18Z",
+     "event": "ready_for_review",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T02:26:20Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:19:39Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T03:19:39Z",
+     "event": "reviewed:commented",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T19:57:24Z",
+     "event": "review_requested",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-23T19:57:37Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@tarekgh I saw you touched some Xml*.cs recently :)"
+    },
+    {
+     "t": "2026-03-23T21:44:55Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "@Copilot address feedback for limit let's use only 100. Let's leave ellipsis at three separate dots for max compat for people with terminals"
+    },
+    {
+     "t": "2026-03-24T16:13:05Z",
+     "event": "commented",
+     "actor": "danmoseley",
+     "text": "/ba-g unrelated build issues"
+    },
+    {
+     "t": "2026-03-24T16:13:15Z",
+     "event": "closed",
+     "actor": "danmoseley",
+     "text": ""
+    },
+    {
+     "t": "2026-03-24T16:13:15Z",
+     "event": "merged",
+     "actor": "danmoseley",
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

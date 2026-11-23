@@ -1,0 +1,1750 @@
+{
+ "schema": "aidev-trace-1",
+ "dataset": "hao-li/AIDev v5 (AIDev-pop)",
+ "repo": "jonathanpeppers/dotnes",
+ "driver": "jonathanpeppers",
+ "day": "2026-03-15",
+ "definitions": {
+  "run": "copilot_work_started -> copilot_work_finished[_failure] or close, capped at 60 min",
+  "wait": "finish -> the driver's next response on the PR (their comment or review, the next run, merge/close), capped at 168 h"
+ },
+ "prs": [
+  {
+   "pr_id": 4076653297,
+   "number": 185,
+   "title": "Fix nested function calls sharing local variable addresses",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/185",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:59:55Z",
+   "runs": [
+    [
+     "2026-03-14T20:23:27Z",
+     "2026-03-14T20:48:59Z"
+    ],
+    [
+     "2026-03-15T01:03:26Z",
+     "2026-03-15T01:59:55Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-14T20:48:59Z",
+     "2026-03-15T01:03:00Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:03:00Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:03:02Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:10:22Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Code review: Approved** Checked the full diff and ran all 395 tests locally — all pass. **What I verified:** - `EstimateMethodLocalBytes` correctly counts distinct `stloc` targets (matching the transpiler's allocate-on-first-store behavior) and accounts for word-sized locals (2 bytes) vs byte-si"
+    },
+    {
+     "t": "2026-03-15T01:32:34Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:32:47Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:32:48Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:59:55Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:59:55Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4076653961,
+   "number": 186,
+   "title": "Fix WriteStloc double-counting LocalCount on local variable reassignment",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/186",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:35:26Z",
+   "runs": [
+    [
+     "2026-03-14T20:23:47Z",
+     "2026-03-14T20:56:33Z"
+    ],
+    [
+     "2026-03-15T01:08:07Z",
+     "2026-03-15T01:35:26Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-14T20:56:33Z",
+     "2026-03-15T01:07:38Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:07:38Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:07:39Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:18:41Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:18:48Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:18:56Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:20:00Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed and approved. The fix is correct and well-scoped. **What this PR does:** Gates all `LocalCount` increments in `WriteStloc` behind an `isNewAllocation` parameter. Each `stloc` handler now detects re-assignment (local already has an address) and passes `isNewAllocation: false`, preventing d"
+    },
+    {
+     "t": "2026-03-15T01:20:08Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green, merge conflicts resolved, all 466 tests pass. Ready for human review."
+    },
+    {
+     "t": "2026-03-15T01:35:26Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:35:26Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4076655350,
+   "number": 187,
+   "title": "Fix multi-param user function calls to push intermediate args",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/187",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:42:35Z",
+   "runs": [
+    [
+     "2026-03-14T20:24:33Z",
+     "2026-03-14T21:05:16Z"
+    ],
+    [
+     "2026-03-15T01:12:23Z",
+     "2026-03-15T01:42:35Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-14T21:05:16Z",
+     "2026-03-15T01:11:49Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:11:49Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:11:49Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:20:16Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed the multi-param user function fix. The approach is solid — look-ahead after `WriteLdloc` correctly detects intermediate args for user function calls and emits `JSR pusha`. **What I checked:** - Traced through `f(x, y)`, `f(x, 5)`, and `f(x, y, z)` scenarios — all correctly push intermedia"
+    },
+    {
+     "t": "2026-03-15T01:33:49Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All 465 tests pass. Ready for human review. **What I added on top of the PR:** 1. **Program6502.cs**: Added `usedMethods?.Contains(\"pusha\")` to the `needsPushaPushax` condition — ensures pusha is included in ROM when decsp4 is active and pusha is actually used (defensive fix for oam_s"
+    },
+    {
+     "t": "2026-03-15T01:39:41Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:39:52Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:39:53Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:42:35Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:42:35Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077252760,
+   "number": 190,
+   "title": "Cache ANESE downloads in GitHub Actions via shared composite action",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/190",
+   "from_issue": false,
+   "merged": true,
+   "closed_at": "2026-03-15T01:10:16Z",
+   "runs": [
+    [
+     "2026-03-15T01:08:04Z",
+     "2026-03-15T01:10:15Z"
+    ]
+   ],
+   "waits": [],
+   "responses": [
+    {
+     "t": "2026-03-15T01:08:27Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:08:28Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:10:15Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:10:16Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077257604,
+   "number": 194,
+   "title": "Snake: initialize new tail segment on grow",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/194",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:20:37Z",
+   "runs": [
+    [
+     "2026-03-15T01:10:45Z",
+     "2026-03-15T01:19:52Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T01:19:52Z",
+     "2026-03-15T01:20:12Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:20:12Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:20:14Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:20:37Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:20:37Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077268246,
+   "number": 195,
+   "title": "Pre-scan all IL for static fields before transpilation",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/195",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:45:36Z",
+   "runs": [
+    [
+     "2026-03-15T01:15:56Z",
+     "2026-03-15T01:29:59Z"
+    ],
+    [
+     "2026-03-15T01:36:05Z",
+     "2026-03-15T01:45:36Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T01:29:59Z",
+     "2026-03-15T01:35:39Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:35:39Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:35:40Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:41:27Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed and merged with main. After merge, main already had a `PreAllocateStaticFields` instance method (from PR #178) that scans both main + user method IL, filters `oam_off`, and has logging — strictly better than the PR's static version. **What I did:** - Resolved merge conflicts (Transpiler.c"
+    },
+    {
+     "t": "2026-03-15T01:42:54Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. Ready for human review. Note: After merge with main, the net diff is just 2 lines — main already had the full `PreAllocateStaticFields` implementation from PR #178. This PR's remaining contribution is passing `staticFields` directly to method writers instead of round-tripping through "
+    },
+    {
+     "t": "2026-03-15T01:45:11Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:45:36Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:45:36Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077271491,
+   "number": 196,
+   "title": "Port 8bitworkshop conio.c sample",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/196",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T01:50:23Z",
+   "runs": [
+    [
+     "2026-03-15T01:17:29Z",
+     "2026-03-15T01:30:40Z"
+    ],
+    [
+     "2026-03-15T01:38:32Z",
+     "2026-03-15T01:50:23Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T01:30:40Z",
+     "2026-03-15T01:38:04Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:38:04Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:38:05Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:46:43Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:47:27Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Clean port of the conio.c sample. Code is correct and well-documented. **What I verified:** - All 468 tests pass (64 + 404) locally - Sample code correctly maps CC65 conio functions to NESLib VRAM equivalents - Border drawing uses proper vram_inc(1) for vertical lines and vram_inc(0) to restore - "
+    },
+    {
+     "t": "2026-03-15T01:50:23Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:50:23Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077307835,
+   "number": 198,
+   "title": "Fix off-by-one boundary checks in WriteStloc and WriteLdloc",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/198",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:10:03Z",
+   "runs": [
+    [
+     "2026-03-15T01:36:53Z",
+     "2026-03-15T01:43:27Z"
+    ],
+    [
+     "2026-03-15T01:44:31Z",
+     "2026-03-15T02:10:03Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T01:43:27Z",
+     "2026-03-15T01:44:07Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T01:44:07Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:44:09Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T01:45:41Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review: **Approve** Verified all 4 boundary fixes in `WriteStloc` and `WriteLdloc`: - `< byte.MaxValue` → `<= byte.MaxValue`: Correct. Without this, value 255 falls to the ushort branch which calls `RemoveLastInstructions(2)` but `WriteLdc(byte)` only emitted 1 instruction — removing the wron"
+    },
+    {
+     "t": "2026-03-15T02:08:51Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review complete. The boundary fix is correct and well-tested. **What the fix does:** Changes `< byte.MaxValue` to `<= byte.MaxValue` (and same for `ushort.MaxValue`) in `WriteStloc` and `WriteLdloc`. Without this, value 255 falls through to the ushort branch which calls `RemoveLastInstruction"
+    },
+    {
+     "t": "2026-03-15T02:09:23Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All 412 tests pass including the new `ByteMaxValue` regression test. Merge conflicts resolved. Ready for human review."
+    },
+    {
+     "t": "2026-03-15T02:10:03Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:10:03Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077326256,
+   "number": 201,
+   "title": "Fix multi-param look-ahead to handle computed args via IL stack depth tracking",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/201",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:20:16Z",
+   "runs": [
+    [
+     "2026-03-15T01:47:27Z",
+     "2026-03-15T01:58:25Z"
+    ],
+    [
+     "2026-03-15T02:00:38Z",
+     "2026-03-15T02:20:16Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T01:58:25Z",
+     "2026-03-15T02:00:03Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:00:03Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review: **Approved** The IL stack depth tracking approach is the right fix. Traced through key scenarios: - `my_func(x, (byte)(y + 1))`: depth starts 1, ldloc y → 2, ldc.i4.1 → 3, add → 2, conv.u1 → 2, call → pusha emitted ✓ - `z = x + y`: depth starts 1, add → 0 → break, no pusha ✓ - `my_fun"
+    },
+    {
+     "t": "2026-03-15T02:00:09Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:00:10Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:17:21Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:17:22Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:17:23Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:18:51Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review complete. The IL stack depth tracking approach is correct and elegant. **What I verified:** - The depth-based scan correctly distinguishes `my_func(x, y+1)` (depth stays >0 through Add) from `z = x + y` (depth drops to 0 at Add) - Added `Ldsfld` to the `nextIsLoad` gate per review feed"
+    },
+    {
+     "t": "2026-03-15T02:18:57Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green, all 413 tests pass, merge conflicts resolved, and all 3 review comments addressed. Ready for human review."
+    },
+    {
+     "t": "2026-03-15T02:20:16Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:20:16Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077326610,
+   "number": 202,
+   "title": "Fix shoot2: inline abs_diff to work around transpiler user-method bugs",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/202",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:57:36Z",
+   "runs": [
+    [
+     "2026-03-15T01:47:34Z",
+     "2026-03-15T02:43:12Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:43:12Z",
+     "2026-03-15T02:53:25Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:17:10Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:17:12Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:17:27Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Rewrote the PR from scratch (the Copilot agent's original commit had no shoot2 changes). **Root cause investigation:** - Ran the ROM in Mesen2 headless mode to inspect runtime state - Enemies DO spawn, but all at x=223 every time — deterministic PRNG - `pad_poll(0)` writes controller state to `$3C"
+    },
+    {
+     "t": "2026-03-15T02:18:54Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. Ready for human review. ![shoot2 sample](https://github.com/user-attachments/assets/shoot2-fixed.png) Enemies now spawn at random positions across the screen instead of always at x=223."
+    },
+    {
+     "t": "2026-03-15T02:29:35Z",
+     "event": "head_ref_force_pushed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:29:44Z",
+     "event": "head_ref_force_pushed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:53:25Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:53:34Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:53:43Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:53:53Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:55:34Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green, merge conflicts resolved, all 481 tests pass. Ready for human review. **Review feedback addressed:** - Updated SP relocation comment (concise, removed stale oam_spr reference) - Fixed PRNG save/restore comment (no longer claims \"entropy\" — we preserve the deterministic seed) - Tried `"
+    },
+    {
+     "t": "2026-03-15T02:57:36Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:57:36Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077326795,
+   "number": 203,
+   "title": "Fix shoot2 loud sound effects: use envelope decay instead of constant volume",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/203",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:34:21Z",
+   "runs": [
+    [
+     "2026-03-15T01:47:42Z",
+     "2026-03-15T02:07:48Z"
+    ],
+    [
+     "2026-03-15T02:09:32Z",
+     "2026-03-15T02:34:21Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:07:48Z",
+     "2026-03-15T02:09:07Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:09:07Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:09:08Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:28:24Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:28:41Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Code review: Approve** Verified the APU control byte changes against the NES APU register layout (`DDLCVVVV`): | SFX | Old → New | What changed | |-----|-----------|-------------| | `sfx_shoot` | `0x7A → 0x4A` | Cleared L (bit 5) + C (bit 4): length counter active, envelope decay | | `sfx_hit` |"
+    },
+    {
+     "t": "2026-03-15T02:29:50Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All tests pass. Review comment addressed (updated outdated poke comment in 9e0d017). Ready for human review."
+    },
+    {
+     "t": "2026-03-15T02:34:21Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:34:21Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077327494,
+   "number": 204,
+   "title": "New sample: procgen (procedural maze generation)",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/204",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:16:36Z",
+   "runs": [
+    [
+     "2026-03-15T01:48:00Z",
+     "2026-03-15T02:01:52Z"
+    ],
+    [
+     "2026-03-15T02:05:09Z",
+     "2026-03-15T02:16:36Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:01:52Z",
+     "2026-03-15T02:04:43Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:04:43Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:04:45Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:08:37Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed the procgen sample. Clean and well-structured code. **What I checked:** - Code follows existing sample patterns (palette setup, main loop, ppu_off/on around VRAM writes) - `draw_maze()` user function with no params — transpiles cleanly - `for` loops with byte iterators compile to standard"
+    },
+    {
+     "t": "2026-03-15T02:10:11Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All 477 tests pass. Ready for human review. ![procgen sample](https://github.com/jonathanpeppers/dotnes/blob/copilot/add-procgen-sample/samples/procgen/procgen.png?raw=true)"
+    },
+    {
+     "t": "2026-03-15T02:14:39Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:14:47Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:16:36Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:16:36Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077344358,
+   "number": 210,
+   "title": "Add NESMirroring MSBuild property and vertscroll sample",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/210",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T02:40:14Z",
+   "runs": [
+    [
+     "2026-03-15T02:02:18Z",
+     "2026-03-15T02:14:40Z"
+    ],
+    [
+     "2026-03-15T02:16:09Z",
+     "2026-03-15T02:23:18Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:14:40Z",
+     "2026-03-15T02:16:03Z"
+    ],
+    [
+     "2026-03-15T02:23:18Z",
+     "2026-03-15T02:29:33Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:16:03Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "@copilot+claude-opus-4.6 can we unify the MSBuild properties: ```xml <NESMirroring>Horizontal</NESMirroring> <NESMirroring>Vertical</NESMirroring> ``` You need to also update the MSBuild property docs and any existing usages."
+    },
+    {
+     "t": "2026-03-15T02:16:08Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:16:10Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:29:33Z",
+     "event": "head_ref_force_pushed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:29:47Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:29:54Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:30:03Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:30:14Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review complete. All 480 tests pass locally. Changes look good: - `NESMirroring` replaces `NESVerticalMirroring` bool with a cleaner string property - Case-insensitive comparison in `Transpiler.cs` handles casing variants - `vertscroll` sample demonstrates the feature well - Fixed the 480-pix"
+    },
+    {
+     "t": "2026-03-15T02:31:41Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All review comments addressed. Ready for human review. - Comment 1 (msbuild-properties.md): Already updated in same PR - Comment 2 (480-pixel comment): Fixed in 42bd1ef — reflects byte wrapping at 256 - Comment 3 (validation): Already case-insensitive via `StringComparison.OrdinalIgno"
+    },
+    {
+     "t": "2026-03-15T02:40:14Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:40:14Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077352614,
+   "number": 211,
+   "title": "Port 8bitworkshop crypto.c dungeon crawler sample",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/211",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": NaN,
+   "runs": [
+    [
+     "2026-03-15T02:06:54Z",
+     "2026-03-15T03:04:29Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T03:04:29Z",
+     "2026-03-15T04:20:02Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T04:20:02Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Deep analysis and partial fixes for the crypto sample port.** ## What I fixed ### 1. PAD constant redefinitions → use `PAD` enum directly (45ca35b) Replaced ~144 occurrences of `PAD_UP`, `PAD_DOWN`, etc. with `(byte)PAD.UP`, `(byte)PAD.DOWN` etc. Follows the neslib convention used by all other s"
+    },
+    {
+     "t": "2026-03-18T00:06:03Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "## Status Update — Merge conflicts resolved, blocking issues reassessed ### Resolved - Merge conflict in `OamSprites.cs` — took main's comprehensive fix from PR #239 - PAD type errors — `pad_trigger()` now returns `PAD` (PR #240 merged), updated 4 bitwise expressions ### Blocking issue status | Issu"
+    },
+    {
+     "t": "2026-03-20T02:56:33Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "## Progress Update: Crypto Sample Transpilation Investigated what's needed to get this sample transpiling. Here's what I found and fixed: ### Fixes applied (sample-level, ready to commit to this PR) 1. **14 compound array assignments** (``+=``/``-=``) rewritten as explicit read-modify-write — avoids"
+    },
+    {
+     "t": "2026-03-20T03:25:00Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-20T03:25:00Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077357232,
+   "number": 212,
+   "title": "docs: document all public MSBuild properties",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/212",
+   "from_issue": false,
+   "merged": true,
+   "closed_at": "2026-03-15T02:08:47Z",
+   "runs": [
+    [
+     "2026-03-15T02:05:25Z",
+     "2026-03-15T02:05:31Z"
+    ],
+    [
+     "2026-03-15T02:06:14Z",
+     "2026-03-15T02:08:47Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:05:31Z",
+     "2026-03-15T02:05:43Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:05:43Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:05:44Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:08:00Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Docs look good. I verified all properties against `dotnes.props`, `dotnes.targets`, and `TranspileToNES.cs`: - All 5 properties + `NESAssembly` item group are documented with correct defaults - All referenced samples (`statusbar`, `horizscroll`, `bankswitch`) exist - iNES header defaults match the"
+    },
+    {
+     "t": "2026-03-15T02:08:47Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:08:47Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:09:43Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. Ready for human review. Changes: - `docs/msbuild-properties.md` — full MSBuild properties reference (all verified against source) - `README.md` — link to the new doc - `.github/copilot-instructions.md` — instruction to always document new MSBuild properties"
+    }
+   ]
+  },
+  {
+   "pr_id": 4077408396,
+   "number": 215,
+   "title": "Add battery-backed SRAM support",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/215",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T13:33:08Z",
+   "runs": [
+    [
+     "2026-03-15T02:37:05Z",
+     "2026-03-15T02:46:43Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:46:43Z",
+     "2026-03-15T02:56:07Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:45:54Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review complete. Clean, well-scoped implementation. **What the PR does:** - Adds `NESBattery` MSBuild property that sets bit 1 of iNES Flags6 (battery-backed SRAM) - Threads the flag from `dotnes.targets` → `TranspileToNES` → `Transpiler` → header write - Adds `SRAM_START` ($6000) and `SRAM_E"
+    },
+    {
+     "t": "2026-03-15T02:46:01Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:46:02Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:56:07Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:56:08Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:57:49Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Code review complete. Clean implementation of battery-backed SRAM support. **What I did:** - Resolved merge conflicts with main's mirroring refactor (`bool` → `string`) - Added `battery` sample: persistent counter using `peek()`/`poke()` on `SRAM_START` - Fixed PublicAPI.Unshipped.txt alphabetical"
+    },
+    {
+     "t": "2026-03-15T02:57:58Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green, all 421 tests pass, review comments addressed. Ready for human review. ![battery sample](https://github.com/jonathanpeppers/dotnes/blob/copilot/add-battery-backed-sram-support/samples/battery/battery.png?raw=true)"
+    },
+    {
+     "t": "2026-03-15T04:30:54Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Fixed the battery sample rendering bug! **Root cause**: The original `display_count` function used several patterns the transpiler doesn't handle correctly inside user functions: 1. **Local byte arrays** passed to `vram_write` — the transpiler emitted wrong pointer (from C stack instead of array a"
+    },
+    {
+     "t": "2026-03-15T13:33:08Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:33:08Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077409105,
+   "number": 216,
+   "title": "Add MMC1 (Mapper 1) support",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/216",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T13:38:36Z",
+   "runs": [
+    [
+     "2026-03-15T02:37:35Z",
+     "2026-03-15T02:56:01Z"
+    ],
+    [
+     "2026-03-15T02:59:07Z",
+     "2026-03-15T03:59:07Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T02:56:01Z",
+     "2026-03-15T02:58:29Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T02:58:29Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed the MMC1 implementation. The shift register protocol is correct — reset with bit 7, then 5 STA/LSR writes to latch. All tests pass (485 total after merge with main). **What I checked:** - Shift register protocol correctness (reset + 5-bit serial write) - RemoveLastInstructions counts matc"
+    },
+    {
+     "t": "2026-03-15T02:58:38Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:58:39Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T02:59:40Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All 485 tests pass. Ready for human review. Changes made during iteration: - Merged latest main (vertscroll, shoot2, CI improvements) - Fixed `mmc1_set_mirroring` to handle local variables and static fields (897ad9e) - Removed [WIP] from title"
+    },
+    {
+     "t": "2026-03-15T04:06:01Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T04:06:12Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T04:06:23Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T04:06:37Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T04:06:38Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T04:07:12Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All review comments addressed and replied to. Added MMC1 sample with screenshot. **Changes in 7bbe8cf:** - Added `samples/mmc1/` sample (NESMapper=1) demonstrating MMC1 API - Fixed `mmc1_set_mirroring` docs: clarified it writes full Control register - Added `MMC1_PRG_FIX_LAST` and `MM"
+    },
+    {
+     "t": "2026-03-15T13:38:36Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:38:36Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077409404,
+   "number": 217,
+   "title": "Add CNROM (Mapper 3) support",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/217",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T12:52:22Z",
+   "runs": [
+    [
+     "2026-03-15T02:43:48Z",
+     "2026-03-15T03:10:09Z"
+    ],
+    [
+     "2026-03-15T03:17:22Z",
+     "2026-03-15T04:17:22Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T03:10:09Z",
+     "2026-03-15T03:16:48Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T03:16:48Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T03:16:50Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T03:17:10Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Code review: Approve** Thorough review of the CNROM (Mapper 3) implementation: **Transpiler changes:** - ✅ iNES header correctly encodes mapper 3 in flags6 bits 4-7 (`0x30`) and flags7 upper nibble - ✅ CHR ROM size byte correctly set to `_chrBanks` (2 = 16KB) - ✅ Multi-CHR bank loading: iterates"
+    },
+    {
+     "t": "2026-03-15T03:17:58Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All tests pass. Merge conflict resolved, screenshot captured via Mesen (ANESE doesn't support mapper 3). Ready for human review. ![slideshow sample](https://github.com/jonathanpeppers/dotnes/blob/copilot/add-cnrom-mapper-3-support/samples/slideshow/slideshow.png?raw=true) **Note:** `d"
+    },
+    {
+     "t": "2026-03-15T03:59:03Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T12:52:22Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T12:52:22Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4077412293,
+   "number": 219,
+   "title": "Add ROM decompiler for .nes to C# round-trip tool",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/219",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-15T13:35:19Z",
+   "runs": [
+    [
+     "2026-03-15T02:47:31Z",
+     "2026-03-15T03:15:32Z"
+    ],
+    [
+     "2026-03-15T03:21:23Z",
+     "2026-03-15T04:21:23Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T03:15:32Z",
+     "2026-03-15T03:20:50Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T03:20:50Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T03:20:52Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T03:21:16Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Reviewed the decompiler implementation and cleaned up the PR. All 489 tests pass locally. ## What I fixed 1. **Reverted unrelated shoot2 changes** — The APU sound effect values and `ppu_on_all` reordering were unrelated to the decompiler. Reverted `samples/shoot2/Program.cs`, both test DLLs, and t"
+    },
+    {
+     "t": "2026-03-15T03:26:29Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All 491 tests pass. Ready for human review. **Summary of cleanup commits:** - Reverted unrelated shoot2 APU changes (those belong in a separate PR) - Cleaned up `dotnes.sln` (removed spurious x64/x86 platforms and BOM from `dotnet sln add`) - Merged latest main to resolve conflicts"
+    },
+    {
+     "t": "2026-03-15T13:02:11Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:02:22Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:02:23Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:02:24Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:02:25Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:02:26Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:35:19Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:35:19Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4078390120,
+   "number": 227,
+   "title": "Use PAD enum directly in shoot2 instead of byte cast",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/227",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-16T00:42:52Z",
+   "runs": [
+    [
+     "2026-03-15T13:35:44Z",
+     "2026-03-15T13:58:21Z"
+    ],
+    [
+     "2026-03-15T14:00:37Z",
+     "2026-03-15T15:00:37Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T13:58:21Z",
+     "2026-03-15T13:59:57Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T13:59:57Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:59:58Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T14:00:12Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Code review: Approve** Clean code style change — replaces `byte pad = (byte)pad_poll(0)` with `PAD pad = pad_poll(0)` and removes 5 explicit `(byte)PAD.X` casts, matching the pattern used in `metacursor` and `fami` samples. **Key finding:** Since `PAD` is `enum PAD : byte` and dotnes.props force"
+    },
+    {
+     "t": "2026-03-15T14:00:28Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. All tests pass. Ready for human review."
+    },
+    {
+     "t": "2026-03-16T00:42:52Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:42:52Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4078390684,
+   "number": 228,
+   "title": "Fix transpiler failure with small constants in peek/poke",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/228",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-16T00:51:34Z",
+   "runs": [
+    [
+     "2026-03-15T13:36:05Z",
+     "2026-03-15T13:48:57Z"
+    ],
+    [
+     "2026-03-15T13:50:58Z",
+     "2026-03-15T14:50:58Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T13:48:57Z",
+     "2026-03-15T13:50:22Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T13:50:22Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Clean fix. All 500 tests pass locally. **What I verified:** - The `RemoveLastInstructions` count correctly adapts based on whether the address fits in a byte (1 LDA instruction) vs ushort (2: LDX + LDA) - Same pattern applied to both `peek` and `poke` handlers - Both new tests assert the exact emi"
+    },
+    {
+     "t": "2026-03-15T13:50:31Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:50:33Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:44:39Z",
+     "event": "reviewed:commented",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:46:39Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. Review comment addressed in 4ffca42 — rewrote test comments to describe the byte-sized constant load path rather than referencing `ldc.i4.s` thresholds. Ready for human review."
+    },
+    {
+     "t": "2026-03-16T00:51:34Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:51:34Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4078393558,
+   "number": 229,
+   "title": "Fix transpile target not retriggering on NES property changes",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/229",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-16T00:50:57Z",
+   "runs": [
+    [
+     "2026-03-15T13:38:00Z",
+     "2026-03-15T13:45:52Z"
+    ],
+    [
+     "2026-03-15T13:51:36Z",
+     "2026-03-15T14:51:36Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T13:45:52Z",
+     "2026-03-15T13:51:00Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T13:39:49Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Monitoring — the Copilot coding agent is still actively working (copilot check in_progress, no diff yet). Will iterate once the agent finishes."
+    },
+    {
+     "t": "2026-03-15T13:51:00Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Approved — clean, well-implemented solution. **What I checked:** - **Approach**: Uses `WriteLinesToFile` with `WriteOnlyWhenDifferent=\"true\"` to create a stamp file tracking NES property values. Only updates the file (and its timestamp) when properties actually change. This is the optimal approach"
+    },
+    {
+     "t": "2026-03-15T13:51:07Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T13:51:09Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:50:57Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:50:57Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4078393941,
+   "number": 230,
+   "title": "Fix explosion position: cross-array copy in stelem.i1",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/230",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-16T00:48:01Z",
+   "runs": [
+    [
+     "2026-03-15T13:38:13Z",
+     "2026-03-15T13:52:21Z"
+    ],
+    [
+     "2026-03-15T14:06:40Z",
+     "2026-03-15T15:06:40Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T13:52:21Z",
+     "2026-03-15T14:06:05Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T14:06:05Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 **Reviewed and verified.** Approving this PR. ## What I checked **Code review:** - The `sourceIndex1Idx` scanning in `HandleStelemI1` correctly identifies the source array index from the `ldloc` immediately before `ldelem_u1` - The cross-array copy emission block (lines 1111-1134) correctly emits "
+    },
+    {
+     "t": "2026-03-15T14:06:11Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T14:06:13Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T14:06:27Z",
+     "event": "commented",
+     "actor": "jonathanpeppers",
+     "text": "🤖 CI is green. Ready for human review. Verified the fix by disassembling the explosion assignment area — the cross-array copy now correctly loads `enemy_x[ei]`/`enemy_y[ei]` before storing to `exp_x[xi]`/`exp_y[xi]`. Previously, it was storing 0 (the stale value in A from the `exp_timer` check)."
+    },
+    {
+     "t": "2026-03-16T00:48:01Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:48:01Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "pr_id": 4078394339,
+   "number": 231,
+   "title": "Detect closure structs from local functions and throw helpful TranspileException",
+   "url": "https://github.com/jonathanpeppers/dotnes/pull/231",
+   "from_issue": true,
+   "merged": true,
+   "closed_at": "2026-03-16T00:50:04Z",
+   "runs": [
+    [
+     "2026-03-15T13:45:59Z",
+     "2026-03-15T14:00:49Z"
+    ],
+    [
+     "2026-03-15T14:02:50Z",
+     "2026-03-15T15:02:50Z"
+    ]
+   ],
+   "waits": [
+    [
+     "2026-03-15T14:00:49Z",
+     "2026-03-15T14:02:17Z"
+    ]
+   ],
+   "responses": [
+    {
+     "t": "2026-03-15T14:02:17Z",
+     "event": "reviewed:approved",
+     "actor": "jonathanpeppers",
+     "text": "🤖 Looks good! Clean, focused change with solid coverage. **What I reviewed:** - Closure detection in `DetectStructLayouts()` correctly catches struct-based display classes before they'd be silently skipped. The `DisplayClass` name check matches Roslyn's naming convention. - Class-based closures woul"
+    },
+    {
+     "t": "2026-03-15T14:02:23Z",
+     "event": "ready_for_review",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-15T14:02:24Z",
+     "event": "review_requested",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:50:04Z",
+     "event": "merged",
+     "actor": "jonathanpeppers",
+     "text": ""
+    },
+    {
+     "t": "2026-03-16T00:50:04Z",
+     "event": "closed",
+     "actor": "jonathanpeppers",
+     "text": ""
+    }
+   ]
+  }
+ ]
+}
