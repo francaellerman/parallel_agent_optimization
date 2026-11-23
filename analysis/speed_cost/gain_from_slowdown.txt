@@ -1,0 +1,30 @@
+
+#### all 71 runs: median extra net saving from allowing slowdowns, as % of the run's token bill [median $]
+                            2 agents (n=45) 3 agents (n=20) 4 agents (n=6)
+variant pricing                                                           
+genonly Anthropic fast mode       2.5% [$0]     20.9% [$31]    13.1% [$27]
+        LithosAI tiers            2.9% [$1]     20.9% [$31]    16.7% [$34]
+        curve fitted              7.0% [$1]     16.5% [$25]    11.3% [$26]
+nostall Anthropic fast mode       0.0% [$0]     17.4% [$26]    11.2% [$21]
+        LithosAI tiers            0.0% [$0]     17.8% [$26]    11.2% [$21]
+        curve fitted              3.8% [$1]     14.7% [$21]     9.3% [$18]
+phase   Anthropic fast mode       0.0% [$0]     14.9% [$13]     9.2% [$21]
+        LithosAI tiers            0.0% [$0]     15.8% [$20]     9.2% [$21]
+        curve fitted              2.9% [$1]     13.4% [$15]     7.3% [$18]
+
+#### runs <= 24 h: median extra net saving from allowing slowdowns, as % of the run's token bill [median $]
+                            2 agents (n=33) 3 agents (n=6) 4 agents (n=3)
+variant pricing                                                          
+genonly Anthropic fast mode       0.0% [$0]    17.3% [$11]    27.8% [$27]
+        LithosAI tiers            2.9% [$0]    17.3% [$11]    27.8% [$27]
+        curve fitted              6.8% [$1]    15.1% [$11]    17.6% [$18]
+nostall Anthropic fast mode       0.0% [$0]    14.4% [$11]    20.4% [$15]
+        LithosAI tiers            0.0% [$0]    14.4% [$11]    20.4% [$15]
+        curve fitted              3.8% [$0]    13.5% [$10]    13.8% [$18]
+phase   Anthropic fast mode       0.0% [$0]     10.6% [$7]     9.5% [$15]
+        LithosAI tiers            0.0% [$0]     10.6% [$7]     9.5% [$15]
+        curve fitted              3.1% [$0]     12.1% [$8]    11.7% [$17]
+
+phase/curve/$120 all runs: Spearman agents vs gain % bill: SignificanceResult(statistic=np.float64(0.31786791820104865), pvalue=np.float64(0.006906735602866711))
+Kruskal 2 vs 3 vs 4: KruskalResult(statistic=np.float64(10.104409901541382), pvalue=np.float64(0.006395216750563353))
+nostall/curve/$120 all runs: Spearman SignificanceResult(statistic=np.float64(0.4483197301649115), pvalue=np.float64(8.825374314450302e-05))
