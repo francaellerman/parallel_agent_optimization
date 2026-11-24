@@ -246,6 +246,63 @@
   </div>
 
   <section>
+    <h2 class="label green">Schedule</h2>
+    <div class="card">
+      <ol class="schedule">
+        <li>
+          <div class="week">11/9/2026</div>
+          <ul>
+            <li><strong>11/11:</strong> Added two SWE-chat parallel-agent traces</li>
+            <li><strong>11/14:</strong> Committed a basic sequential human + agent simulator</li>
+          </ul>
+        </li>
+        <li>
+          <div class="week">11/16/2026<br><small>MVP</small></div>
+          <ul>
+            <li><strong>11/17:</strong> Added a SWE-chat replay simulator and speed-sweep plot</li>
+            <li><strong>11/18:</strong> Tried vLLM batch-size benchmarking on GHC, which didn't work, and looked into Bridges-2 and NCSA</li>
+            <li><strong>11/18&ndash;11/19:</strong> Built and committed the synthetic parallel-agent simulator with a live view</li>
+            <li><strong>11/19:</strong> Measured agent parallelism in SWE-chat and saved and visualised a 3&ndash;4-agent trace</li>
+            <li><strong>11/20:</strong> Analysed the parallelism trend over time, then explored AIDev Copilot data (idle time, issue-started PRs, batch reviewing)</li>
+            <li><strong>11/20&ndash;11/21:</strong> Went back to the speed sweep plots and made some for &gt;2 agents, and also measured how much money would be saved with different inference speeds and the monetary value of time saved</li>
+          </ul>
+        </li>
+        <li>
+          <div class="week">11/23/2026<br><small>Milestone</small></div>
+          <ul>
+            <li><strong>11/23:</strong> Made static trace timeline images, dropped AIDev, and committed and pushed the work</li>
+            <li>Achieve and benchmark real inference speeds on NCSA GPU by adjusting batch sizes</li>
+            <li>Run the traces we have been using on the real GPUs as prefilled tokens and see if the simulated results can be replicated in real life with batch sizes</li>
+          </ul>
+        </li>
+        <li>
+          <div class="week">11/30/2026</div>
+          <ul>
+            <li>Building an agent-human interaction model, which may include
+              <ul>
+                <li>Prediction of LLM response length</li>
+                <li>Prediction of human thinking time</li>
+                <li>Learned model targeting cost and time efficiency</li>
+              </ul>
+            </li>
+            <li>Instead of each agent being given a task to begin with, making a system that is making decisions on splitting and assigning subtasks of a main task (added benefit of less cognitive load on the human)</li>
+          </ul>
+        </li>
+        <li>
+          <div class="week">12/7 – 12/11</div>
+          <ul>
+            <li>Preparing live demo / presentation
+              <ul>
+                <li>We&rsquo;ve seen people fit small LLMs in a web app on the front-end (<a href="https://webllm.mlc.ai/" target="_blank" rel="noopener">WebLLM</a>) though this may be overboard</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
     <figure>
       <div class="frame">
         <img src="assets/framework-design.png" width="1492" height="1118"
@@ -294,53 +351,6 @@
         <p>An interface for efficient (in terms of cost and time for completion of a given task) parallel agent use that is informed by human-agent interactions.</p>
         <p>Most ambitiously we want to handle any of the following: more than 2 agents, a probability distribution for the prediction of response length / human input time, and generally taking into account the human factors of how humans interact with agents.</p>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="label green">Schedule</h2>
-    <div class="card">
-      <ol class="schedule">
-        <li>
-          <div class="week">11/9/2026</div>
-          <ul>
-            <li>Most bare-bones MVP of running synthetic traces with a priori agent token number and human response time</li>
-            <li>Collect agent use traces in bulk and build the agent use emulator</li>
-          </ul>
-        </li>
-        <li>
-          <div class="week">11/16/2026<br><small>MVP</small></div>
-          <ul>
-            <li>Working tool (for both synthetic and real agent runs) that adjusts inference speed based on model</li>
-            <li>Incremental feature to tool that does the above and adjusts some other inference/interface or protocol parameter (eg frequency of follow-up questions, extent of monitorability of agent activity)</li>
-          </ul>
-        </li>
-        <li>
-          <div class="week">11/23/2026<br><small>Milestone</small></div>
-          <ul>
-            <li>Building an agent-human interaction model, which may include
-              <ul>
-                <li>Prediction of LLM response length</li>
-                <li>Prediction of human thinking time</li>
-                <li>Learned model targeting cost and time efficiency</li>
-              </ul>
-            </li>
-            <li>Instead of each agent being given a task to begin with, making a system that is making decisions on splitting and assigning subtasks of a main task</li>
-          </ul>
-        </li>
-        <li>
-          <div class="week">11/30/2026</div>
-          <ul>
-            <li>Adjust which model we are using as well (more or less powerful models) since less powerful models are faster as well</li>
-          </ul>
-        </li>
-        <li>
-          <div class="week">12/7 – 12/11</div>
-          <ul>
-            <li>Preparing live demo / presentation</li>
-          </ul>
-        </li>
-      </ol>
     </div>
   </section>
 
