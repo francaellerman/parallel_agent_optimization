@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+.venv/
+.data-cache/
+data/
+traces/parallel_005/raw/
