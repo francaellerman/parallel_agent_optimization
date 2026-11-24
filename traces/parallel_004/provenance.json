@@ -1,0 +1,67 @@
+{
+  "dataset": "SALT-NLP/SWE-chat",
+  "dataset_url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat",
+  "license": "odc-by",
+  "attributed_user": "Soph",
+  "selection": "Convenience sample of overlapping main sessions attributed to the same developer; selected before inspecting speed-sweep outcomes. Full transcripts retained. Attribution is not independent verification of one human or task independence.",
+  "sources": [
+    {
+      "session_id": "43dddd8c-787e-41d4-8a31-4af294e000bc",
+      "user_id": "Soph",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts1/43dddd8c-787e-41d4-8a31-4af294e000bc.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts1/43dddd8c-787e-41d4-8a31-4af294e000bc.jsonl"
+    },
+    {
+      "session_id": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6",
+      "user_id": "Soph",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts1/1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts1/1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6.jsonl"
+    }
+  ],
+  "verification": {
+    "shared_event_uuids": 0,
+    "agent_overlap_seconds": 1461.8609999999999,
+    "agent_overlap_intervals": [
+      {
+        "start": "2026-08-20T12:01:36.419000+00:00",
+        "end": "2026-08-20T12:11:39.498000+00:00",
+        "seconds": 603.079
+      },
+      {
+        "start": "2026-08-20T12:11:45.244000+00:00",
+        "end": "2026-08-20T12:13:05.791000+00:00",
+        "seconds": 80.547
+      },
+      {
+        "start": "2026-08-20T12:22:15.635000+00:00",
+        "end": "2026-08-20T12:35:13.870000+00:00",
+        "seconds": 778.235
+      }
+    ],
+    "files": [
+      {
+        "filename": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6.jsonl",
+        "sha256": "5d3fb5269eac5424df4899270bd0899ea363ffaf2812751a9fec61ef6724c13d",
+        "session_id": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6",
+        "start": "2026-08-20T12:01:36.419Z",
+        "end": "2026-08-20T13:22:35.979Z",
+        "human_prompts": 5,
+        "warnings": []
+      },
+      {
+        "filename": "43dddd8c-787e-41d4-8a31-4af294e000bc.jsonl",
+        "sha256": "fba6e032c3ee52918e486e30cc0d173c7daaa7de7b59a0cc4a2f65245c05ba6f",
+        "session_id": "43dddd8c-787e-41d4-8a31-4af294e000bc",
+        "start": "2026-08-20T11:30:31.259Z",
+        "end": "2026-08-20T12:35:13.870Z",
+        "human_prompts": 4,
+        "warnings": [
+          "Agent block 1: next_prompt_before_end_turn"
+        ]
+      }
+    ]
+  },
+  "task_independence": "Initial requests are distinct; full task independence and one-human operation are not independently verified."
+}

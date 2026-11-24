@@ -1,0 +1,85 @@
+{
+  "dataset": "SALT-NLP/SWE-chat",
+  "dataset_url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat",
+  "license": "odc-by",
+  "attributed_user": "gtrrz-victor",
+  "selection": "Convenience sample of overlapping main sessions attributed to the same developer; selected before inspecting speed-sweep outcomes. Full transcripts retained. Attribution is not independent verification of one human or task independence.",
+  "sources": [
+    {
+      "session_id": "1231cd12-eaa6-47f6-96d5-a56fa8982ead",
+      "user_id": "gtrrz-victor",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts1/1231cd12-eaa6-47f6-96d5-a56fa8982ead.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts1/1231cd12-eaa6-47f6-96d5-a56fa8982ead.jsonl"
+    },
+    {
+      "session_id": "d045300e-6175-4393-a3cc-bcda27e4b10e",
+      "user_id": "gtrrz-victor",
+      "repo_id": "entireio/cli",
+      "transcript_path": "transcripts1/d045300e-6175-4393-a3cc-bcda27e4b10e.jsonl",
+      "viewer_url_hf": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/blob/main/transcripts1/d045300e-6175-4393-a3cc-bcda27e4b10e.jsonl"
+    }
+  ],
+  "verification": {
+    "shared_event_uuids": 0,
+    "agent_overlap_seconds": 1564.103,
+    "agent_overlap_intervals": [
+      {
+        "start": "2026-08-17T10:09:58.642000+00:00",
+        "end": "2026-08-17T10:17:53.420000+00:00",
+        "seconds": 474.778
+      },
+      {
+        "start": "2026-08-17T10:26:48.527000+00:00",
+        "end": "2026-08-17T10:32:36.067000+00:00",
+        "seconds": 347.54
+      },
+      {
+        "start": "2026-08-17T10:52:02.842000+00:00",
+        "end": "2026-08-17T10:57:44.158000+00:00",
+        "seconds": 341.316
+      },
+      {
+        "start": "2026-08-17T11:01:14.112000+00:00",
+        "end": "2026-08-17T11:04:05.415000+00:00",
+        "seconds": 171.303
+      },
+      {
+        "start": "2026-08-17T11:06:34.594000+00:00",
+        "end": "2026-08-17T11:08:02.614000+00:00",
+        "seconds": 88.02
+      },
+      {
+        "start": "2026-08-17T11:10:43.268000+00:00",
+        "end": "2026-08-17T11:11:59.535000+00:00",
+        "seconds": 76.267
+      },
+      {
+        "start": "2026-08-17T11:16:29.942000+00:00",
+        "end": "2026-08-17T11:17:34.821000+00:00",
+        "seconds": 64.879
+      }
+    ],
+    "files": [
+      {
+        "filename": "1231cd12-eaa6-47f6-96d5-a56fa8982ead.jsonl",
+        "sha256": "59e4f71abfb7c8d9eb788d3ce3fa1ddad737cfb557dc0ba4df8a042a5617ae2c",
+        "session_id": "1231cd12-eaa6-47f6-96d5-a56fa8982ead",
+        "start": "2026-08-17T10:09:58.642Z",
+        "end": "2026-08-17T11:17:34.821Z",
+        "human_prompts": 7,
+        "warnings": []
+      },
+      {
+        "filename": "d045300e-6175-4393-a3cc-bcda27e4b10e.jsonl",
+        "sha256": "7c99cd62d38e085778d668992ef2d2697d5907bf4c7a2f199a32b5f7b203fcf2",
+        "session_id": "d045300e-6175-4393-a3cc-bcda27e4b10e",
+        "start": "2026-08-17T09:20:12.055Z",
+        "end": "2026-08-17T11:21:20.018Z",
+        "human_prompts": 5,
+        "warnings": []
+      }
+    ]
+  },
+  "task_independence": "Both initial prompts request review of the same PR. Concurrent distinct sessions, but not independent initial tasks; exclude from validation requiring independent task assignments."
+}

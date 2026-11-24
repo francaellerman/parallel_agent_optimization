@@ -1,306 +1,229 @@
 #!/usr/bin/env python3
-"""Parallel-agent simulator: up to 4 agents, one human, a backlog of queries.
-
-Each agent replays traces in a loop (agents start on different traces). Trace
-blocks mean:
-
-  agent block -> the agent generates `tokens` tokens at --tps tokens/second
-                 (every agent generates independently at the same speed)
-  human block -> the agent posts a query and BLOCKS until the human has spent
-                 `seconds` on it (reading/approving/answering)
-
-There is one human, who handles queries one at a time, first come first served.
-When queries arrive faster than the human can handle them, a backlog builds up
-and agents sit idle.
-
-The simulation runs in real time and draws a live timeline: one column per
-agent plus one for the human, one row per --row-seconds, time flowing down.
-
-  blue   = agent generating
-  yellow = human reviewing this agent's query
-  blank  = agent idle, waiting in the human's queue
-
-At the end (or on Ctrl-C) it prints how fast queries arrived vs. how fast the
-human approved them, the backlog, and how agents spent their time.
-
-Usage:
-  python simulate_parallel.py traces/*.json                 # 4 agents, 3 minutes
-  python simulate_parallel.py traces/*.json --agents 2 --duration 60
-  python simulate_parallel.py traces/*.json --tps 50 --json run.json
-"""
+"""Replay independent sessions on one clock, with overlapping human windows."""
 
 import argparse
+import heapq
 import json
-import statistics
+import math
+import re
+import shutil
 import sys
+import textwrap
 import time
-from collections import deque
+from datetime import datetime
 from pathlib import Path
 
-from simulate_sequential import load_trace
-
-TICK = 0.05     # seconds per simulation step
-MAX_AGENTS = 4
-COL = 18        # width of each timeline column
-
-RESET = "\033[0m"
-STYLE = {"gen": "\033[44;97m", "human": "\033[43;30m"}   # blue bg / yellow bg
-GLYPH = {"gen": "█", "human": "▒"}                       # used with --no-color
+DEFAULT_INPUT = Path(__file__).resolve().parent / "traces/parallel_001/processed.json"
 
 
-# --------------------------------------------------------------------------- model
-
-class Agent:
-    def __init__(self, idx, traces):
-        self.idx = idx
-        self.traces = traces
-        self.trace_i = idx % len(traces)  # stagger which trace each agent starts on
-        self.block_i = -1
-        self.state = None        # gen | human_wait | human
-        self.remaining = 0.0     # tokens left in current agent block
-        self.time_in = {"gen": 0.0, "human_wait": 0.0, "human": 0.0}
-        self.tasks_done = 0
-        self.label = None        # label of a block that started but isn't drawn yet
-        self.row_time = {}       # state -> seconds spent in it during the current row
-
-    def trace(self):
-        return self.traces[self.trace_i]
-
-    def block(self):
-        return self.trace()["blocks"][self.block_i]
-
-
-class Sim:
-    def __init__(self, traces, args):
-        self.args = args
-        self.now = 0.0
-        self.agents = [Agent(i, traces) for i in range(args.agents)]
-        self.queue = deque()        # (agent, query) waiting for the human
-        self.reviewing = None       # (agent, query) the human is working on
-        self.review_left = 0.0
-        self.queries = []           # every query ever posted
-        self.human_busy = 0.0
-        self.backlog_time = 0.0
-        self.human_label = None
-        self.human_row = {}         # agent idx -> seconds reviewed during current row
-
-    # ---- transitions
-    def advance(self, a):
-        """Move agent `a` to its next block (looping over traces)."""
-        a.block_i += 1
-        if a.block_i >= len(a.trace()["blocks"]):
-            a.tasks_done += 1
-            a.trace_i = (a.trace_i + 1) % len(a.traces)
-            a.block_i = 0
-        b = a.block()
-        name = a.trace()["name"]
-        if b["type"] == "agent":
-            a.state, a.remaining = "gen", float(b["tokens"])
-            a.label = ("gen", f"{name} gen {b['tokens']}t")
+def format_message(text, width):
+    lines = []
+    fence = None
+    for line in text.splitlines():
+        marker = re.match(r"^\s*(`{3,}|~{3,})", line)
+        if marker:
+            if fence is None:
+                fence = marker.group(1)[0]
+            elif marker.group(1)[0] == fence:
+                fence = None
+            lines.append(line)
+        elif fence or line.startswith("    ") or line.lstrip().startswith("|"):
+            lines.append(line)
+        elif not line.strip():
+            lines.append("")
         else:
-            q = {"agent": a.idx, "trace": name, "block": a.block_i, "note": b.get("note", ""),
-                 "seconds": b["seconds"], "arrive": self.now, "start": None, "end": None}
-            self.queries.append(q)
-            a.state = "human_wait"
-            self.queue.append((a, q))
-
-    def start_review(self):
-        if self.reviewing is None and self.queue:
-            a, q = self.queue.popleft()
-            q["start"] = self.now
-            a.state = "human"
-            a.label = ("human", f"{q['trace']} review {q['seconds']:g}s")
-            self.human_label = (a.idx, f"agent {a.idx} ({q['trace']}) {q['seconds']:g}s")
-            self.reviewing, self.review_left = (a, q), q["seconds"]
-
-    def step(self, dt):
-        self.start_review()
-        for a in self.agents:
-            a.time_in[a.state] += dt
-            a.row_time[a.state] = a.row_time.get(a.state, 0.0) + dt
-        self.backlog_time += len(self.queue) * dt
-        if self.reviewing:
-            self.human_busy += dt
-            idx = self.reviewing[0].idx
-            self.human_row[idx] = self.human_row.get(idx, 0.0) + dt
-        self.now += dt
-
-        for a in self.agents:
-            if a.state == "gen":
-                a.remaining -= self.args.tps * dt
-                if a.remaining <= 1e-9:
-                    self.advance(a)
-        if self.reviewing:
-            self.review_left -= dt
-            if self.review_left <= 1e-9:
-                a, q = self.reviewing
-                q["end"] = self.now
-                self.reviewing = None
-                self.advance(a)
-        self.start_review()
-
-    # ---- results
-    def summary(self):
-        T = self.now or 1e-9
-        approved = [q for q in self.queries if q["end"] is not None]
-        waits = [q["start"] - q["arrive"] for q in self.queries if q["start"] is not None]
-        traces = self.agents[0].traces
-        n_q = sum(b["type"] == "human" for t in traces for b in t["blocks"])
-        cycle = sum(b["tokens"] / self.args.tps if b["type"] == "agent" else b["seconds"]
-                    for t in traces for b in t["blocks"])
-        review_s = [b["seconds"] for t in traces for b in t["blocks"] if b["type"] == "human"]
-        capacity = 60 / statistics.mean(review_s)
-        # Demand: queries/min if every agent had its own human (never waited).
-        demand = len(self.agents) * n_q / cycle * 60
-        n = len(self.agents)
-        return {
-            "config": {"agents": n, "tps": self.args.tps, "elapsed_s": T},
-            "queries_arrived": len(self.queries),
-            "queries_approved": len(approved),
-            "arrival_rate_per_min": len(self.queries) / T * 60,
-            "approval_rate_per_min": len(approved) / T * 60,
-            "demand_rate_per_min": demand,
-            "human_capacity_per_min": capacity,
-            "offered_load": demand / capacity,
-            "human_utilization": self.human_busy / T,
-            "backlog_end": len(self.queue),
-            "backlog_mean": self.backlog_time / T,
-            "wait_mean_s": statistics.mean(waits) if waits else 0.0,
-            "wait_max_s": max(waits) if waits else 0.0,
-            "tasks_completed": sum(a.tasks_done for a in self.agents),
-            "agent_time_fraction": {k: sum(a.time_in[k] for a in self.agents) / (n * T)
-                                    for k in ("gen", "human_wait", "human")},
-            "per_agent_idle_fraction": [a.time_in["human_wait"] / T for a in self.agents],
-            "queries": self.queries,
-        }
+            prefix = re.match(r"^(\s*(?:[-*+]\s+|\d+[.)]\s+|>\s*))", line)
+            indent = " " * len(prefix.group(1)) if prefix else ""
+            lines.extend(textwrap.wrap(line, width=width, subsequent_indent=indent,
+                                       break_long_words=False, break_on_hyphens=False))
+    return "\n".join("    " + line if line else "" for line in lines)
 
 
-# --------------------------------------------------------------------------- live view
+def load_sessions(paths):
+    sessions = []
+    origins = []
+    for path in paths:
+        data = json.loads(Path(path).read_text())
+        if data.get("schema_version") != 1 or data.get("time_unit") != "seconds":
+            raise ValueError(f"{path}: expected schema_version=1, time_unit=seconds")
+        origin = datetime.fromisoformat(data["origin"].replace("Z", "+00:00"))
+        if origin.tzinfo is None:
+            raise ValueError("Origin must include a timezone")
+        origins.append(origin.timestamp())
+        for session in data["sessions"]:
+            session = dict(session)
+            offset = session["start_offset"]
+            if not isinstance(offset, (int, float)) or not math.isfinite(offset) or offset < 0:
+                raise ValueError("start_offset must be finite and nonnegative")
+            session["absolute_start"] = origin.timestamp() + offset
+            blocks = session["blocks"]
+            if not blocks:
+                raise ValueError("Each session needs at least one block")
+            for i, block in enumerate(blocks):
+                duration = block["duration"]
+                if block["role"] != ("human" if i % 2 == 0 else "agent"):
+                    raise ValueError("Blocks must alternate human/agent, starting with human")
+                if not isinstance(block["text"], str):
+                    raise ValueError("Block text must be a string")
+                if not isinstance(duration, (int, float)) or not math.isfinite(duration) or duration < 0:
+                    raise ValueError("Block duration must be finite and nonnegative")
+            sessions.append(session)
+    if not sessions:
+        raise ValueError("No sessions found")
+    if len({s["session_id"] for s in sessions}) != len(sessions):
+        raise ValueError("Duplicate session IDs")
+    origin = min(origins)
+    for session in sessions:
+        session["start_offset"] = round(session.pop("absolute_start") - origin, 6)
+    return sessions
 
-class View:
-    def __init__(self, sim, color):
-        self.sim = sim
-        self.color = color
 
-    def cell(self, state, text):
-        if state not in STYLE:
-            return " " * COL
-        if self.color:
-            return f"{STYLE[state]}{(' ' + text)[:COL].ljust(COL)}{RESET}"
-        fill = GLYPH[state] * COL
-        return (text[:COL - 1] + " " + fill)[:COL] if text else fill
+def replay(sessions, inference_speed=1.0, speedup=100.0, display=True, inference_speeds=None):
+    if not math.isfinite(inference_speed) or inference_speed <= 0:
+        raise ValueError("inference_speed must be finite and positive")
+    if not math.isfinite(speedup) or speedup < 0:
+        raise ValueError("speedup must be finite and nonnegative (0 means instant)")
+    speeds = list(inference_speeds) if inference_speeds is not None else [inference_speed] * len(sessions)
+    if len(speeds) != len(sessions) or any(not math.isfinite(s) or s <= 0 for s in speeds):
+        raise ValueError("inference_speeds must contain one finite positive speed per session")
+    states = [{"index": -1, "start": s["start_offset"], "end": s["start_offset"], "done": False} for s in sessions]
+    queue = [(s["start_offset"], i) for i, s in enumerate(sessions)]
+    heapq.heapify(queue)
+    events = []
+    wall_start = time.monotonic()
+    interactive = display and sys.stdout.isatty()
+    drawn_lines = 0
+    labels = [f"Agent {i + 1}" for i in range(len(sessions))]
 
-    def header(self):
-        cols = [f"agent {a.idx}".center(COL) for a in self.sim.agents] + ["human".center(COL)]
-        print(f"{'t (s)':>6} │" + "│".join(cols) + f"│{'queue':>6}")
-        print("─" * 7 + "┼" + "┼".join("─" * COL for _ in cols) + "┼" + "─" * 6)
+    if display:
+        print("Parallel chat replay")
+        for label, session, speed in zip(labels, sessions, speeds):
+            print(f"  {label}: {session['session_id']} · inference speed {speed:g}x")
+        print()
 
-    def row(self, t):
-        sim, cells = self.sim, []
-        for a in sim.agents:
-            state = max(a.row_time, key=a.row_time.get) if a.row_time else None
-            text = ""
-            if a.label and a.label[0] == state:
-                text, a.label = a.label[1], None
-            cells.append(self.cell(state, text))
-            a.row_time = {}
-        if sim.human_row:
-            idx = max(sim.human_row, key=sim.human_row.get)
-            text = ""
-            if sim.human_label and sim.human_label[0] == idx:
-                text, sim.human_label = sim.human_label[1], None
-            cells.append(self.cell("human", text))
-        else:
-            cells.append(self.cell(None, ""))
-        sim.human_row = {}
-        self.clear_status()
-        print(f"{t:6.0f} │" + "│".join(cells) + f"│{len(sim.queue):6d}")
+    def clear_progress():
+        nonlocal drawn_lines
+        if drawn_lines:
+            sys.stdout.write(f"\033[{drawn_lines}A\r\033[J")
+            drawn_lines = 0
 
-    def status(self):
-        s = self.sim
-        approved = sum(q["end"] is not None for q in s.queries)
-        sys.stdout.write(f"\r\033[K  t={s.now:6.1f}s  queue={len(s.queue)}  "
-                         f"arrived={len(s.queries)}  approved={approved}  (Ctrl-C to stop)")
+    def show_message(i, block, start, end):
+        if not display:
+            return
+        clear_progress()
+        human = block["role"] == "human"
+        speaker = f"HUMAN → {labels[i].upper()}" if human else labels[i].upper()
+        action = "human window" if block["role"] == "human" else "agent work"
+        boundary = block.get("boundary", "")
+        status = f" | {boundary}" if boundary in {
+            "interrupted", "next_prompt_before_end_turn", "trace_end_incomplete"
+        } else ""
+        width = max(24, min(88, shutil.get_terminal_size().columns - 6))
+        color = "\033[1;36m" if human else "\033[1;32m" if i % 2 == 0 else "\033[1;35m"
+        color, reset = (color, "\033[0m") if interactive else ("", "")
+        print("\n")
+        print(f"{color}  {'═' * width}")
+        print(f"  {speaker}{reset}")
+        print(f"  t={end:.3f}s · {action}: {end - start:.3f}s{status}")
+        print(f"{color}  {'─' * width}{reset}\n")
+        print(format_message(block["text"] or "(No recorded text.)", width - 2))
+        print("\n", flush=True)
+
+    def render(now):
+        nonlocal drawn_lines
+        if not interactive:
+            return
+        lines = [f"  LIVE · t={now:.1f}s · playback {speedup:g}x"]
+        for label, session, state, speed in zip(labels, sessions, states, speeds):
+            label = f"{label} ({speed:g}x)"
+            if state["done"]:
+                lines.append(f"{label}: DONE at {state['end']:.3f}s")
+            elif state["index"] < 0:
+                lines.append(f"{label}: starts at {state['start']:.3f}s")
+            else:
+                block = session["blocks"][state["index"]]
+                duration = state["end"] - state["start"]
+                elapsed = max(0.0, min(duration, now - state["start"]))
+                fraction = elapsed / duration if duration else 1.0
+                bar = "#" * int(fraction * 20) + "." * (20 - int(fraction * 20))
+                activity = "HUMAN WINDOW" if block["role"] == "human" else "AGENT WORK"
+                lines.append(f"  {label} · {activity}: [{bar}] {fraction:3.0%} · {elapsed:.0f}/{duration:.0f}s")
+        clear_progress()
+        for line in lines:
+            sys.stdout.write("\r\033[2K" + line[:max(1, shutil.get_terminal_size().columns - 1)] + "\n")
         sys.stdout.flush()
+        drawn_lines = len(lines)
 
-    def clear_status(self):
-        sys.stdout.write("\r\033[K")
+    def wait_until(target):
+        if speedup == 0:
+            return
+        deadline = wall_start + target / speedup
+        while True:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                return
+            render(min(target, (time.monotonic() - wall_start) * speedup))
+            time.sleep(min(0.05, remaining))
 
+    while queue:
+        now, i = heapq.heappop(queue)
+        wait_until(now)
+        session, state = sessions[i], states[i]
+        if state["index"] >= 0:
+            block = session["blocks"][state["index"]]
+            events.append({
+                "order": len(events), "session_id": session["session_id"],
+                "block_index": state["index"], "role": block["role"],
+                "start": state["start"], "end": now,
+                "duration": now - state["start"], "baseline_duration": block["duration"],
+            })
+            show_message(i, block, state["start"], now)
+        state["index"] += 1
+        if state["index"] == len(session["blocks"]):
+            state["done"] = True
+        else:
+            block = session["blocks"][state["index"]]
+            duration = block["duration"] / speeds[i] if block["role"] == "agent" else block["duration"]
+            state.update(start=now, end=now + duration)
+            heapq.heappush(queue, (state["end"], i))
+        render(now)
 
-def print_summary(s):
-    c = s["config"]
-    f = s["agent_time_fraction"]
-    print(f"\n=== {c['agents']} agents at {c['tps']:g} tok/s, {c['elapsed_s']:.0f}s elapsed")
-    print("Rates:")
-    print(f"  agent demand          {s['demand_rate_per_min']:6.2f} /min  "
-          "(if the human never made agents wait)")
-    print(f"  queries arriving      {s['arrival_rate_per_min']:6.2f} /min  ({s['queries_arrived']} total)")
-    print(f"  human approving       {s['approval_rate_per_min']:6.2f} /min  ({s['queries_approved']} total)")
-    print(f"  human max capacity    {s['human_capacity_per_min']:6.2f} /min  (1 / mean review time)")
-    print(f"  offered load          {s['offered_load']:6.2f}       "
-          "(demand / capacity; >1 means the human is the bottleneck)")
-    print(f"  human utilization     {s['human_utilization']:6.1%}")
-    print("Backlog (queries waiting for the human):")
-    print(f"  now {s['backlog_end']}, time-averaged {s['backlog_mean']:.2f}")
-    print(f"  wait before the human starts a query: mean {s['wait_mean_s']:.1f}s, "
-          f"max {s['wait_max_s']:.1f}s")
-    print("Agent time (avg over agents):")
-    print(f"  generating {f['gen']:.0%}, idle waiting for human {f['human_wait']:.0%}, "
-          f"being reviewed {f['human']:.0%}")
-    print("  idle per agent: " + ", ".join(f"agent {i} {x:.0%}"
-                                           for i, x in enumerate(s["per_agent_idle_fraction"])))
-    print(f"  tasks completed: {s['tasks_completed']}")
+    clear_progress()
+    summary = []
+    for session, state, speed in zip(sessions, states, speeds):
+        summary.append({
+            "session_id": session["session_id"], "start": session["start_offset"], "end": state["end"],
+            "inference_speed": speed,
+            "agent_seconds": sum(b["duration"] for b in session["blocks"] if b["role"] == "agent") / speed,
+            "human_seconds": sum(b["duration"] for b in session["blocks"] if b["role"] == "human"),
+        })
+    return {"inference_speed": speeds[0] if len(set(speeds)) == 1 else None,
+            "inference_speeds": dict(zip((s["session_id"] for s in sessions), speeds)),
+            "total_time": max(s["end"] for s in states), "sessions": summary, "events": events}
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("traces", nargs="+", help="trace JSON files (agents loop over them)")
-    ap.add_argument("--agents", type=int, default=MAX_AGENTS, choices=range(1, MAX_AGENTS + 1),
-                    help=f"number of parallel agents, 1-{MAX_AGENTS} (default {MAX_AGENTS})")
-    ap.add_argument("--tps", type=float, default=100.0,
-                    help="tokens/second each agent generates at (default 100)")
-    ap.add_argument("--duration", type=float, default=180.0, help="seconds to run (default 180)")
-    ap.add_argument("--row-seconds", type=float, default=1.0,
-                    help="seconds per timeline row (default 1)")
-    ap.add_argument("--no-color", action="store_true", help="draw blocks with characters instead")
-    ap.add_argument("--json", help="write the summary and every query here")
-    args = ap.parse_args()
-
-    traces = [load_trace(p) for p in args.traces]
-    sim = Sim(traces, args)
-    view = View(sim, color=not args.no_color)
-
-    legend = ("blue = generating, yellow = human reviewing, blank = idle (waiting for human)"
-              if view.color else f"{GLYPH['gen']} = generating, {GLYPH['human']} = human "
-                                 "reviewing, blank = idle (waiting for human)")
-    print(f"{args.agents} agents, {args.tps:g} tok/s, one human, {args.duration:g}s.  {legend}\n")
-    view.header()
-
-    for a in sim.agents:
-        sim.advance(a)
-    start = time.monotonic()
-    ticks_per_row = max(1, round(args.row_seconds / TICK))
-    k = 0
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--h", action="help", help="Show this help message and exit")
+    parser.add_argument("inputs", nargs="*", type=Path, help="One or more replay JSON files; each may contain any number of sessions")
+    parser.add_argument("--inference-speed", type=float, default=1.0, help="Agent duration divisor (default: recorded speed)")
+    parser.add_argument("--inference-speeds", nargs="+", type=float,
+                        help="One speed per session in input order; overrides --inference-speed")
+    parser.add_argument("--speedup", type=float, default=1000.0, help="Playback multiplier; 0 runs instantly (default: 1000)")
+    parser.add_argument("--output", type=Path, help="Optional JSON event log and summary")
+    args = parser.parse_args()
     try:
-        while sim.now < args.duration - 1e-9:
-            sim.step(TICK)
-            k += 1
-            if k % ticks_per_row == 0:
-                view.row(sim.now - args.row_seconds)
-            view.status()
-            delay = start + k * TICK - time.monotonic()
-            if delay > 0:
-                time.sleep(delay)
-    except KeyboardInterrupt:
-        pass
-    view.clear_status()
-
-    s = sim.summary()
-    print_summary(s)
-    if args.json:
-        Path(args.json).write_text(json.dumps(s, indent=2))
-        print(f"\nwrote {args.json}")
+        sessions = load_sessions(args.inputs or [DEFAULT_INPUT])
+        result = replay(sessions, args.inference_speed, args.speedup, inference_speeds=args.inference_speeds)
+    except (ValueError, KeyError, OSError) as exc:
+        parser.error(str(exc))
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(result, indent=2) + "\n")
+    print("\nParallel replay summary")
+    for session in result["sessions"]:
+        print(f"  {session['session_id'][:8]}: {session['start']:.3f}s -> {session['end']:.3f}s; agent {session['agent_seconds']:.3f}s, human windows {session['human_seconds']:.3f}s")
+    print(f"  All {len(result['sessions'])} recorded sequences finished at t={result['total_time']:.3f}s")
 
 
 if __name__ == "__main__":

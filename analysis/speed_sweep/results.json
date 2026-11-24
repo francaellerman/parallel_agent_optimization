@@ -1,0 +1,798 @@
+[
+  {
+    "datapoint": "parallel_001",
+    "input": "/Users/malenacochrane/Desktop/para_agents/parallel_agent_optimization/traces/parallel_001/processed.json",
+    "align_starts": false,
+    "sessions": [
+      {
+        "session_id": "2bc49e0c-2217-4d12-8f74-4e9951044a9c",
+        "start_offset": 0.0,
+        "agent_seconds": 3251.983,
+        "human_seconds": 39763.033,
+        "human_windows": 11,
+        "longest_human_window": 31427.2
+      },
+      {
+        "session_id": "b6331150-ad33-4922-858c-405394d686ba",
+        "start_offset": 645.519,
+        "agent_seconds": 9912.114,
+        "human_seconds": 30487.481,
+        "human_windows": 10,
+        "longest_human_window": 22418.563
+      }
+    ],
+    "per_agent_sweeps": [
+      {
+        "agent": 1,
+        "session_id": "2bc49e0c-2217-4d12-8f74-4e9951044a9c",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 41045.114,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 46266.998999999996,
+            "overall_hours": 12.851944166666666,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 44099.010333333325,
+            "overall_hours": 12.24972509259259,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 43376.347444444444,
+            "overall_hours": 12.048985401234567,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 42364.61939999999,
+            "overall_hours": 11.767949833333331,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 41931.02166666667,
+            "overall_hours": 11.647506018518518,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 41389.024499999985,
+            "overall_hours": 11.496951249999995,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 41063.8262,
+            "overall_hours": 11.406618388888889,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 41045.114,
+            "overall_hours": 11.401420555555555,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 41045.114,
+            "overall_hours": 11.401420555555555,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 41045.114,
+            "overall_hours": 11.401420555555555,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 41045.114,
+            "overall_hours": 11.401420555555555,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 41045.114,
+            "overall_hours": 11.401420555555555,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          }
+        ]
+      },
+      {
+        "agent": 2,
+        "session_id": "b6331150-ad33-4922-858c-405394d686ba",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 43015.016,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 50957.22800000001,
+            "overall_hours": 14.154785555555558,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 44349.15200000001,
+            "overall_hours": 12.319208888888891,
+            "bottleneck_session": "b6331150-ad33-4922-858c-405394d686ba"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 43015.015999999996,
+            "overall_hours": 11.948615555555554,
+            "bottleneck_session": "2bc49e0c-2217-4d12-8f74-4e9951044a9c"
+          }
+        ]
+      }
+    ],
+    "other_speed": 1.0,
+    "fixed_speed_baseline_seconds": 43015.015999999996
+  },
+  {
+    "datapoint": "parallel_002",
+    "input": "/Users/malenacochrane/Desktop/para_agents/parallel_agent_optimization/traces/parallel_002/processed.json",
+    "align_starts": false,
+    "sessions": [
+      {
+        "session_id": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6",
+        "start_offset": 0.0,
+        "agent_seconds": 5870.2080000000005,
+        "human_seconds": 8420.369,
+        "human_windows": 10,
+        "longest_human_window": 2750.726
+      },
+      {
+        "session_id": "ea1c8041-5321-4da8-9eab-ff4628dbb037",
+        "start_offset": 7214.158,
+        "agent_seconds": 3337.597,
+        "human_seconds": 3291.569,
+        "human_windows": 3,
+        "longest_human_window": 1925.211
+      }
+    ],
+    "per_agent_sweeps": [
+      {
+        "agent": 1,
+        "session_id": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 13843.324,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 20160.784999999996,
+            "overall_hours": 5.600218055555555,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 16247.313,
+            "overall_hours": 4.5131425,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 14942.822333333334,
+            "overall_hours": 4.1507839814814815,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 13843.324,
+            "overall_hours": 3.8453677777777777,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          }
+        ]
+      },
+      {
+        "agent": 2,
+        "session_id": "ea1c8041-5321-4da8-9eab-ff4628dbb037",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 14290.577000000001,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 17180.921,
+            "overall_hours": 4.772478055555555,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 14955.856333333331,
+            "overall_hours": 4.154404537037037,
+            "bottleneck_session": "ea1c8041-5321-4da8-9eab-ff4628dbb037"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 14290.577,
+            "overall_hours": 3.969604722222222,
+            "bottleneck_session": "4bf4b198-080d-4b2f-8194-6aa0cc10dad6"
+          }
+        ]
+      }
+    ],
+    "other_speed": 1.0,
+    "fixed_speed_baseline_seconds": 14290.577
+  },
+  {
+    "datapoint": "parallel_003",
+    "input": "/Users/malenacochrane/Desktop/para_agents/parallel_agent_optimization/traces/parallel_003/processed.json",
+    "align_starts": false,
+    "sessions": [
+      {
+        "session_id": "1231cd12-eaa6-47f6-96d5-a56fa8982ead",
+        "start_offset": 2986.587,
+        "agent_seconds": 1705.062,
+        "human_seconds": 2351.117,
+        "human_windows": 7,
+        "longest_human_window": 1025.816
+      },
+      {
+        "session_id": "d045300e-6175-4393-a3cc-bcda27e4b10e",
+        "start_offset": 0.0,
+        "agent_seconds": 5696.844,
+        "human_seconds": 1571.1190000000001,
+        "human_windows": 5,
+        "longest_human_window": 683.015
+      }
+    ],
+    "per_agent_sweeps": [
+      {
+        "agent": 1,
+        "session_id": "1231cd12-eaa6-47f6-96d5-a56fa8982ead",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 7267.963,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 8747.827999999998,
+            "overall_hours": 2.4299522222222216,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 7611.119999999999,
+            "overall_hours": 2.1142,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          }
+        ]
+      },
+      {
+        "agent": 2,
+        "session_id": "d045300e-6175-4393-a3cc-bcda27e4b10e",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 7042.766,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 12964.807,
+            "overall_hours": 3.601335277777778,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 9166.911,
+            "overall_hours": 2.5463641666666668,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 7900.9456666666665,
+            "overall_hours": 2.1947071296296294,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 7267.963,
+            "overall_hours": 2.018878611111111,
+            "bottleneck_session": "d045300e-6175-4393-a3cc-bcda27e4b10e"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 7042.766,
+            "overall_hours": 1.9563238888888888,
+            "bottleneck_session": "1231cd12-eaa6-47f6-96d5-a56fa8982ead"
+          }
+        ]
+      }
+    ],
+    "other_speed": 1.0,
+    "fixed_speed_baseline_seconds": 7267.963
+  },
+  {
+    "datapoint": "parallel_004",
+    "input": "/Users/malenacochrane/Desktop/para_agents/parallel_agent_optimization/traces/parallel_004/processed.json",
+    "align_starts": false,
+    "sessions": [
+      {
+        "session_id": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6",
+        "start_offset": 1865.16,
+        "agent_seconds": 2804.879,
+        "human_seconds": 2054.681,
+        "human_windows": 5,
+        "longest_human_window": 1443.986
+      },
+      {
+        "session_id": "43dddd8c-787e-41d4-8a31-4af294e000bc",
+        "start_offset": 0.0,
+        "agent_seconds": 3069.918,
+        "human_seconds": 812.693,
+        "human_windows": 4,
+        "longest_human_window": 429.631
+      }
+    ],
+    "per_agent_sweeps": [
+      {
+        "agent": 1,
+        "session_id": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 3919.8410000000003,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 9529.599,
+            "overall_hours": 2.6471108333333335,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 7659.679666666667,
+            "overall_hours": 2.1276887962962965,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 7036.373222222221,
+            "overall_hours": 1.9545481172839503,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 6163.7442,
+            "overall_hours": 1.7121511666666667,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 5789.760333333334,
+            "overall_hours": 1.6082667592592594,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 5322.2805,
+            "overall_hours": 1.47841125,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 5041.7926,
+            "overall_hours": 1.4004979444444443,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 4854.800666666667,
+            "overall_hours": 1.348555740740741,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 4721.235000000001,
+            "overall_hours": 1.3114541666666668,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 4621.06075,
+            "overall_hours": 1.283627986111111,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 4543.147444444444,
+            "overall_hours": 1.2619854012345677,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 4480.8168,
+            "overall_hours": 1.2446713333333332,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          }
+        ]
+      },
+      {
+        "agent": 2,
+        "session_id": "43dddd8c-787e-41d4-8a31-4af294e000bc",
+        "other_speed": 1.0,
+        "infinite_speed_floor_seconds": 6724.72,
+        "sweep": [
+          {
+            "inference_speed": 0.5,
+            "overall_seconds": 6952.529,
+            "overall_hours": 1.9312580555555556,
+            "bottleneck_session": "43dddd8c-787e-41d4-8a31-4af294e000bc"
+          },
+          {
+            "inference_speed": 0.75,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 0.9,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1.25,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 1.5,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 2,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 2.5,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 3,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 3.5,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 4,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 4.5,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          },
+          {
+            "inference_speed": 5,
+            "overall_seconds": 6724.72,
+            "overall_hours": 1.867977777777778,
+            "bottleneck_session": "1e9d9e4c-117e-4fe3-acb4-dd9743b4e8d6"
+          }
+        ]
+      }
+    ],
+    "other_speed": 1.0,
+    "fixed_speed_baseline_seconds": 6724.72
+  }
+]
