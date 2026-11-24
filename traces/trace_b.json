@@ -1,0 +1,13 @@
+{
+  "name": "B",
+  "description": "Debug a production issue: investigate, hypothesise, patch.",
+  "blocks": [
+    {"type": "human", "seconds": 8.0, "note": "User pastes error log"},
+    {"type": "agent", "tokens": 900, "note": "Agent analyses log and searches code"},
+    {"type": "human", "seconds": 11.0, "note": "User answers clarifying questions"},
+    {"type": "agent", "tokens": 300, "note": "Agent proposes a hypothesis"},
+    {"type": "human", "seconds": 13.0, "note": "User checks hypothesis against dashboards"},
+    {"type": "agent", "tokens": 1200, "note": "Agent writes patch and regression test"},
+    {"type": "human", "seconds": 10.0, "note": "User reviews patch"}
+  ]
+}

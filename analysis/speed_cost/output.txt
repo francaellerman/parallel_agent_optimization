@@ -1,0 +1,81 @@
+== Price of speed: m(s) = r / (1 + r - s)
+   offer  1.4x speed at 1.67x price   implied r=1.00   (LithosAI DeepSeek V4.1 Flash Fast (350+ vs 250+ tok/s, $1.00 vs $0.60))
+   offer  1.8x speed at 2.33x price   implied r=1.40   (LithosAI DeepSeek V4.1 Flash Ultra (450+ vs 250+ tok/s, $1.40 vs $0.60))
+   offer  1.8x speed at 2.00x price   implied r=1.60   (LithosAI GLM-5.3-Flash Ultra (450+ vs 250+ tok/s, $1.00 vs $0.50))
+   offer  2.5x speed at 2.00x price   implied r=3.00   (Anthropic / OpenAI fast mode (up to 2.5x output tok/s, 2x price))
+   fitted        r=1.45: 1.5x -> 1.52x price, 2x -> 3.21x, 2.5x -> infx; speed limit 2.45x
+   steep (r=1)   r=1.00: 1.5x -> 2.00x price, 2x -> 1000000000000.00x, 2.5x -> infx; speed limit 2.00x
+   gentle (r=3)  r=3.00: 1.5x -> 1.20x price, 2x -> 1.50x, 2.5x -> 2.00x; speed limit 4.00x
+
+== Traces: 71  (2 agents: 45, 3: 20, 4: 6)
+   recorded token cost per trace at 1x: median $67, mean $153; per agent-hour of work: median $6 per hour of run
+
+== Fitted price curve (r=1.45), whole agent phases scale (partner's model)
+                    traces  worth_speeding  med_time_saved_pct  med_time_saved_min  med_extra_usd  med_net_usd  mean_net_usd  total_net_usd  med_net_pct_total  med_max_speed
+value_per_h agents                                                                                                                                                           
+30          2           45            0.93                3.13                7.46           2.37         1.49         40.07        1803.14               0.87           1.27
+            3           20            0.75                1.28               28.50           6.49         6.16         78.53        1570.60               0.83           1.35
+            4            6            1.00                3.57              109.37          26.21        16.43        101.67         610.04               0.41           1.17
+60          2           45            1.00                6.81               12.29           5.51         6.33        107.14        4821.42               2.64           1.45
+            3           20            0.95                2.57               46.96          20.57        24.52        210.27        4205.37               1.11           1.39
+            4            6            1.00                5.73              186.36          44.83        93.66        289.66        1737.99               2.42           1.39
+120         2           45            1.00               10.02               15.39          10.65        21.18        260.66       11729.74               5.21           1.65
+            3           20            1.00                4.23               65.71          43.55        85.52        512.44       10248.86               1.89           1.54
+            4            6            1.00                6.97              240.77          70.02       311.87        730.95        4385.69               4.86           1.60
+240         2           45            1.00               11.95               17.42          18.55        54.34        595.07       26778.36               8.32           1.82
+            3           20            1.00                4.82               78.93          77.89       228.27       1171.62       23432.38               3.56           1.72
+            4            6            1.00                7.85              279.19         103.47       838.45       1705.13       10230.77               6.14           1.79
+
+== Anthropic fast mode menu {1x, 2.5x at 2x}, whole agent phases scale
+                    traces  worth_speeding  med_time_saved_pct  med_time_saved_min  med_extra_usd  med_net_usd  mean_net_usd  total_net_usd  med_net_pct_total  med_max_speed
+value_per_h agents                                                                                                                                                           
+30          2           45            0.40                0.00                0.00           0.00         0.00         58.98        2654.00               0.00            2.5
+            3           20            0.40                0.00                0.00           0.00         0.00         92.19        1843.76               0.00            2.5
+            4            6            0.33                0.00                0.00           0.00         0.00        146.39         878.34               0.00            2.5
+60          2           45            0.71                4.61               19.78          10.64         9.28        151.76        6829.41               2.01            2.5
+            3           20            0.60                1.56               68.72          16.03         7.03        258.58        5171.60               0.38            2.5
+            4            6            0.67                8.21              376.89          50.58       148.49        426.08        2556.48               2.78            2.5
+120         2           45            0.89               10.43               22.63          17.30        30.32        351.51       15817.87               5.71            2.5
+            3           20            0.90                6.22              107.07          72.53       121.31        618.09       12361.83               2.74            2.5
+            4            6            0.83                9.93              376.89          68.40       525.39       1018.68        6112.08               7.11            2.5
+240         2           45            0.96               16.81               22.63          18.86        79.88        755.09       33979.07               9.25            2.5
+            3           20            1.00                6.34              107.07          91.86       342.32       1385.34       27706.88               5.17            2.5
+            4            6            0.83                9.93              376.89          68.40      1279.17       2206.97       13241.82               8.47            2.5
+
+== Sensitivity: total net saving across all traces ($), by pricing and what scales
+value_per_h                     30       60       120      240
+variant pricing                                               
+genonly Anthropic fast mode     0.0    100.0   1082.0   5779.0
+        LithosAI tiers          0.0      8.0    296.0   2389.0
+        curve fitted           12.0    157.0    998.0   3839.0
+        curve gentle (r=3)    106.0    652.0   2471.0   7222.0
+        curve steep (r=1)       1.0     55.0    493.0   2385.0
+nostall Anthropic fast mode   202.0   1885.0   7592.0  20888.0
+        LithosAI tiers         35.0    572.0   3495.0  12377.0
+        curve fitted          274.0   1420.0   4975.0  13988.0
+        curve gentle (r=3)    923.0   3194.0   8918.0  22029.0
+        curve steep (r=1)     104.0    767.0   3228.0  10061.0
+phase   Anthropic fast mode  5376.0  14557.0  34292.0  74928.0
+        LithosAI tiers       3100.0   9305.0  23476.0  53789.0
+        curve fitted         3984.0  10765.0  26364.0  60442.0
+        curve gentle (r=3)   6758.0  16477.0  37689.0  82593.0
+        curve steep (r=1)    2678.0   7914.0  20405.0  48417.0
+
+== Sensitivity: share of traces where speeding any agent pays off
+value_per_h                   30    60    120   240
+variant pricing                                    
+genonly Anthropic fast mode  0.01  0.23  0.66  0.89
+        LithosAI tiers       0.01  0.10  0.44  0.87
+        curve fitted         0.35  0.82  0.97  1.00
+        curve gentle (r=3)   0.83  0.97  1.00  1.00
+        curve steep (r=1)    0.15  0.62  0.94  1.00
+nostall Anthropic fast mode  0.23  0.54  0.85  0.96
+        LithosAI tiers       0.10  0.44  0.76  0.94
+        curve fitted         0.82  0.97  1.00  1.00
+        curve gentle (r=3)   0.97  1.00  1.00  1.00
+        curve steep (r=1)    0.58  0.97  1.00  1.00
+phase   Anthropic fast mode  0.39  0.68  0.89  0.96
+        LithosAI tiers       0.25  0.62  0.82  0.94
+        curve fitted         0.89  0.99  1.00  1.00
+        curve gentle (r=3)   0.99  1.00  1.00  1.00
+        curve steep (r=1)    0.75  0.99  1.00  1.00

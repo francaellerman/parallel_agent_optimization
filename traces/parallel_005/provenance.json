@@ -1,0 +1,62 @@
+{
+  "label": "4-way parallel day (u0085, entireio/cli, 2026-08-10)",
+  "dataset": "SALT-NLP/SWE-chat",
+  "attributed_user_id": "u0085",
+  "identity_note": "Dataset commit-author attribution; not independently verified human identity. User id replaced with a code (see analysis/swechat_parallelism/pseudonymize.py).",
+  "selection": "Top all-Claude-Code candidate from an activity-based concurrency scan of SWE-chat: per user, sessions' activity intervals (events split at 15-min gaps) were swept to find episodes with >=3 sessions engaged at once. This episode peaks at 4 engaged sessions, ~60 min at peak, on 2026-08-10.",
+  "excluded": {
+    "1bb14cff-579a-405b-bf21-2f750df23c17": "Fork of dd63837d: its 16 blocks are identical (same prompts, timestamps, tokens) and it stops at 19:23 while dd63837d continues. Kept in raw/ for provenance, not in processed.json."
+  },
+  "notes": [
+    "f12d4d56 runs until 2026-08-25 with overnight gaps; visualize_trace.py clips to a window (default: 2026-08-10 11:30-21:20 UTC)."
+  ],
+  "sources": [
+    {
+      "session_id": "1bb14cff-579a-405b-bf21-2f750df23c17",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts1/1bb14cff-579a-405b-bf21-2f750df23c17.jsonl"
+    },
+    {
+      "session_id": "734bff3a-007f-484f-90e0-e35ece49c19d",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts1/734bff3a-007f-484f-90e0-e35ece49c19d.jsonl"
+    },
+    {
+      "session_id": "a78beaef-a2ab-4cad-9900-f4d3c3b51959",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts1/a78beaef-a2ab-4cad-9900-f4d3c3b51959.jsonl"
+    },
+    {
+      "session_id": "dd63837d-121f-48fe-9af6-fb5a143b934d",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts/dd63837d-121f-48fe-9af6-fb5a143b934d.jsonl"
+    },
+    {
+      "session_id": "f12d4d56-00f1-45df-a94c-6a3cf2714244",
+      "url": "https://huggingface.co/datasets/SALT-NLP/SWE-chat/resolve/main/transcripts1/f12d4d56-00f1-45df-a94c-6a3cf2714244.jsonl"
+    }
+  ],
+  "files": [
+    {
+      "filename": "1bb14cff-579a-405b-bf21-2f750df23c17.jsonl",
+      "sha256": "c9ffb41fa270c71fa82abb4683377ce767f97cabb9c1ebc0e3c8c374ff38efc4",
+      "used_in_processed": false
+    },
+    {
+      "filename": "734bff3a-007f-484f-90e0-e35ece49c19d.jsonl",
+      "sha256": "47c11d72d470eddbc2c1734a71d43f257a63cde225ccfd2a69d797d338acc9fa",
+      "used_in_processed": true
+    },
+    {
+      "filename": "a78beaef-a2ab-4cad-9900-f4d3c3b51959.jsonl",
+      "sha256": "cecdddcebc80f15f044b1d5fe177519d85f7312cdd01ea9a10ba5ec3d983e602",
+      "used_in_processed": true
+    },
+    {
+      "filename": "dd63837d-121f-48fe-9af6-fb5a143b934d.jsonl",
+      "sha256": "48c9a069001c1a00e054efff54c252d3793fc21d58f25aad2db9b86b83ccc88b",
+      "used_in_processed": true
+    },
+    {
+      "filename": "f12d4d56-00f1-45df-a94c-6a3cf2714244.jsonl",
+      "sha256": "37016574542f867fdc9ad25cec5a3f522c8fdcb4f188f3acca84d1b9ef3eb134",
+      "used_in_processed": true
+    }
+  ]
+}
